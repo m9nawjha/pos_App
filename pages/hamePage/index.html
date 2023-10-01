@@ -8,7 +8,7 @@
     <link rel='shortcut icon' href='assets/images/favicon.png' type='image/x-icon'>
     <link rel='stylesheet' href='assets/library/bootstrap/css/bootstrap.min.css'>
     <link rel='stylesheet' href='assets/css/style.css'>
-    <link rel='stylesheet' href='assets/css/custom.css'>
+    <link rel='stylesheet' href='assets/css/style-main.css'>
     <link rel='stylesheet' href='assets/font/icon.css'>
     <link rel='stylesheet' href='assets/font/@fontsource/tajawal/index.css'>   
 </head>
@@ -21,24 +21,52 @@
             <div class='app-header header sticky shadow-sm'>
                 <div class='container-fluid main-container'>
                     <div class='d-flex'>
-                        <a aria-label='Hide Sidebar' class='app-sidebar__toggle text-blue link-hover mt-3' data-bs-toggle='sidebar' href='javascript:void(0)'></a>
+                        <a aria-label='Hide Sidebar' class='app-sidebar__toggle text-white link-hover mt-3' data-bs-toggle='sidebar' href='javascript:void(0)'></a>
                         <a class='logo-horizontal d-flex d-md-none' href='index.html'>
-                            <img src='assets/images/logo.svg' class='header-brand-img mx-8' style='height: 50px !important;' alt='logo'>
+                            <img src='assets/images/logo-white.svg' class='header-brand-img mx-2' style='height: 50px !important;' alt='logo'>
                         </a>
                         <div class='main-header-center ms-3 d-none d-lg-block'>
                             <input type='text' class='form-control' id='typehead' placeholder='كلمة البحث هنا'>
                             <button class='btn px-0 pt-2'><i class='bi bi-search'></i></button>
                         </div>
                         <div class='d-flex order-lg-2 ms-auto header-right-icons'>
+                            <div class='dropdown d-flex profile-1 me-2'>
+                                <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link  leading-none d-flex'>
+                                    <span class='avatar brround cover-image mx-4' data-bs-image-src='assets/images/unkown-user-img.svg' style='background: url(assets/images/unkown-user-img.svg) center center; border: 0.2rem solid var(--bs-white)'> <span class='avatar-status bg-green'></span> </span>
+                                    <div class='d-none d-sm-block'>
+                                        <h5 class='text-white me-2 mb-0 fs-6'> فهد الحربي </h5>
+                                        <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>    
+                                    </div>
+                                    <i class='bi bi-chevron-down fs-6 text-primary'></i>
+                                </a>
+                                <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile_dropdown rounded-4'>
+                                    <div class='drop-heading'>
+                                        <div class='text-center'>
+                                            <h5 class='text-blue mb-0 fs-14 fw-semibold'>فهد الحربي</h5>
+                                            <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>
+                                        </div>
+                                    </div>
+                                    <div class='dropdown-divider m-0'></div>
+                                    <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#profilemodal'>
+                                        <i class='dropdown-icon fs-4 las la-user-cog text-blue'></i> تعديل حسابي
+                                    </a>
+                                    <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#passmodal'>
+                                        <i class='dropdown-icon fs-4 bi bi-file-lock text-blue'></i> تغيير كلمة المرور
+                                    </a>
+                                    <a class='dropdown-item' href='login.html'>
+                                        <i class='dropdown-icon fs-4 las la-sign-out-alt text-blue'></i> تسجيل الخروج
+                                    </a>
+                                </div>
+                            </div>
                             <!-- SEARCH -->
-                            <button class='navbar-toggler navresponsive-toggler text-blue d-lg-none ms-auto' type='button'
+                            <button class='navbar-toggler navresponsive-toggler text-white d-lg-none ms-auto' type='button'
                                 data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent-4'
                                 aria-controls='navbarSupportedContent-4' aria-expanded='false'
                                 aria-label='Toggle navigation'>
                                 <span class='navbar-toggler-icon bi bi-three-dots-vertical'></span>
                             </button>
                             <div class='navbar navbar-collapse responsive-navbar p-0'>
-                                <div class='collapse navbar-collapse' id='navbarSupportedContent-4'>
+                                <div class='collapse navbar-collapse bg-blue' id='navbarSupportedContent-4'>
                                     <div class='d-flex order-lg-2'>
                                         <div class='dropdown d-lg-none d-flex'>
                                             <a href='javascript:void(0)' class='nav-link icon' data-bs-toggle='dropdown'>
@@ -46,17 +74,22 @@
                                             </a>
                                             <div class='dropdown-menu header-search dropdown-menu-start'>
                                                 <div class='input-group w-100 p-2'>
-                                                    <input type='text' class='form-control' placeholder='البحث....'>
-                                                    <div class='input-group-text btn btn-primary'>
+                                                    <input type='text' class='form-control' style='border-radius: 50px !important;' placeholder='البحث....'>
+                                                    <div class='input-group-text btn btn-primary ms-2'>
                                                         <i class='bi bi-search'></i>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <!--pos-->
+                                        <div class='d-flex'>
+                                            <a class='nav-link icon' href='pages/pos/index.html' data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="نقاط البيع">
+                                                <i class='bi bi-ui-checks-grid fs-4'></i>
+                                            </a>
+                                        </div>
                                         <!-- SETTING -->
                                         <div class='d-flex'>
-                                            <a class='nav-link icon link-hover' href='pages/settings/index.html'>
+                                            <a class='nav-link icon' href='pages/settings/index.html' data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="الإعدادت">
                                                 <i class='bi bi-gear-fill fs-4'></i>
                                             </a>
                                         </div>
@@ -64,12 +97,12 @@
 
                                         <!-- NOTIFICATIONS -->
                                         <div class='dropdown  d-flex notifications'>
-                                            <a class='nav-link icon link-hover' data-bs-toggle='dropdown'>
+                                            <a class='nav-link icon' data-bs-toggle='dropdown'>
                                                 <i class='bi bi-bell-fill fs-4'></i><span class='spinner-grow text-danger position-absolute top-0 translate-middle' style='left: 70%; width: 10px; height: 10px;' role='status'>
                                                     <span class='visually-hidden'>3</span>
                                                   </span>                                            
                                             </a>
-                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow-sm'>
+                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow-sm rounded-4'>
                                                 <div class='drop-heading border-bottom'>
                                                     <div class='d-flex'>
                                                         <h6 class='mt-1 mb-0 fs-16 fw-semibold text-blue'>الإشعارات
@@ -78,7 +111,7 @@
                                                 </div>
                                                 <div class='notifications-menu notifications-menu-scroll' style='overflow: scroll;'>
                                                     <a class='dropdown-item d-flex' href='notify-list.html'>
-                                                        <div class='me-3 notifyimg  bg-success brround box-shadow-success'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
                                                             <i class='bi bi-check-circle fs-4'></i>
                                                         </div>
                                                         <div class='mt-1 wd-80p'>
@@ -87,7 +120,7 @@
                                                         </div>
                                                     </a>
                                                     <a class='dropdown-item d-flex' href='notify-list.html'>
-                                                        <div class='me-3 notifyimg  bg-success brround box-shadow-success'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
                                                             <i class='bi bi-check-circle fs-4'></i>
                                                         </div>
                                                         <div class='mt-1 wd-80p'>
@@ -96,7 +129,7 @@
                                                         </div>
                                                     </a>
                                                     <a class='dropdown-item d-flex' href='notify-list.html'>
-                                                        <div class='me-3 notifyimg  bg-success brround box-shadow-success'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
                                                             <i class='bi bi-check-circle fs-4'></i>
                                                         </div>
                                                         <div class='mt-1 wd-80p'>
@@ -105,7 +138,7 @@
                                                         </div>
                                                     </a>
                                                     <a class='dropdown-item d-flex' href='notify-list.html'>
-                                                        <div class='me-3 notifyimg  bg-success brround box-shadow-success'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
                                                             <i class='bi bi-check-circle fs-4'></i>
                                                         </div>
                                                         <div class='mt-1 wd-80p'>
@@ -114,7 +147,7 @@
                                                         </div>
                                                     </a>
                                                     <a class='dropdown-item d-flex' href='notify-list.html'>
-                                                        <div class='me-3 notifyimg  bg-success brround box-shadow-success'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
                                                             <i class='bi bi-check-circle fs-4'></i>
                                                         </div>
                                                         <div class='mt-1 wd-80p'>
@@ -130,44 +163,16 @@
                                         </div>
                                         <!-- /NOTIFICATIONS -->
 
-                                        
-                                        <div class='dropdown d-flex profile-1'>
-                                            <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link  leading-none d-flex'>
-                                                <span class='avatar brround cover-image mx-4' data-bs-image-src='assets/images/unkown-user-img.svg' style='background: url(assets/images/unkown-user-img.svg) center center;'> <span class='avatar-status bg-green'></span> </span>
-                                                <div class='d-block'>
-                                                    <h5 class='text-blue me-2 mb-0 fs-6 fw-bold'> فهد الحربي </h5>
-                                                    <h5 class='text-muted mb-0 fs-13 fw-semibold'>المشرف</h5>    
-                                                </div>
-                                                <i class='bi bi-chevron-down fs-6 text-blue me-2'></i>
-                                            </a>
-                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow'>
-                                                <div class='drop-heading'>
-                                                    <div class='text-center'>
-                                                        <h5 class='text-blue mb-0 fs-14 fw-semibold'>فهد الحربي</h5>
-                                                        <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>
-                                                    </div>
-                                                </div>
-                                                <div class='dropdown-divider m-0'></div>
-                                                <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#profilemodal'>
-                                                    <i class='dropdown-icon fs-4 las la-user-cog'></i> تعديل حسابي
-                                                </a>
-                                                <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#passmodal'>
-                                                    <i class='dropdown-icon fs-4 bi bi-file-lock'></i> تغيير كلمة المرور
-                                                </a>
-                                                <a class='dropdown-item' href='login.html'>
-                                                    <i class='dropdown-icon fs-4 las la-sign-out-alt'></i> تسجيل الخروج
-                                                </a>
-                                            </div>
-                                        </div>
 
                                         <div class='dropdown d-flex'>
-                                            <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link  leading-none d-flex'>
-                                                <i class='bi bi-shop text-blue fs-4'></i>
-                                                <span
-                                                    class="fs-16 fw-bold text-primary ms-2 d-none d-xl-block"> المتاجر</span>
-                                                    <i class='bi bi-chevron-down fs-6 text-blue mx-2'></i>
+                                            <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link link-hover  leading-none d-flex btn btn-primary py-2 rounded-pill' >
+                                                <div data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="اختيار المتجر">
+                                                    <i class='bi bi-shop text-white fs-6'></i>
+                                                    <span class="fs-6 text-white ms-2 d-none "> المتاجر</span>
+                                                    <i class='bi bi-chevron-down fs-6 text-white ms-2'></i>
+                                                </div>
                                             </a>
-                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow'>
+                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow rounded-4'>
 
                                                 <div class='dropdown-divider mt-0'></div>
                                                 <a class='dropdown-item' href='#'>
@@ -219,23 +224,285 @@
 
 
             <!--app-content open-->
-            <div class='main-content app-content'>
+            <div class='main-content app-content' style='margin-top: 75px;'>
                 <div class='side-app'>
 
                     <!-- CONTAINER -->
                     <div class='main-container container-fluid'>
-                        <div class='page-header'>
-                            <h1 class='page-title lh-base'><i class='bi bi-cart3 text-primary'></i> برنامج عربة للمحاسبة وإدارة المبيعات</h1>
+                        <div class='page-header d-block'>
                             <div>
-                                <div>
-                                    <ol class='breadcrumb'>
-                                        <li class='breadcrumb-item'><a href='index.html'>الصفحة الرئيسية</a></li>
-                                        <!-- <li class='breadcrumb-item active'><a href='javascript:void(0)'>القسم الفرعي</a></li> -->
-                                    </ol>
+                                <ol class="breadcrumb1 d-block d-sm-flex border border-blue border-opacity-10 rounded-2 shadow-sm justify-content-between align-items-center pt-5" style='background: var(--bs-secondary);'>
+                                    <h2 class='page-title'><i class='bi bi-cart3 bg-blue text-primary rounded-circle px-2 py-1 my-2'></i> برنامج عربة <span class='text-muted fs-6 mx-1'>للمحاسبة وإدارة المبيعات</span></h2>
+                                    <div class='d-block d-sm-flex justify-content-end my-2'>
+                                        <li class="breadcrumb-item"><i class="bi bi-house-heart-fill me-2 text-blue" aria-hidden="true"></i><a class="text-blue" href="javascript:void(0)">الرئيسية</a></li>
+                                    </div>
+                                    <div class='text-end'>
+                                        <span class='text-muted' id='date_time'></span>
+                                    </div>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-info mb-5" role="alert">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                                    <i class="fa fa-check-circle-o me-2" aria-hidden="true"></i> بنجاح
+                                    تم تسجيل الدخول بنجاح                                 
                                 </div>
                             </div>
                         </div>
 
+                        <!-- ROW-1 -->
+                        <div class='row'>
+                            <div class='col-lg-12 col-md-12 col-sm-12 col-xl-12'>
+                                <div class='row'>
+                                    <div class='col-sm-6 col-md-6 col-lg-6 col-xl'>
+                                        <div class='card border-0 bg-blue img-card box-primary-shadow'>
+                                            <div class='card-header d-flex justify-content-between pb-0 border-bottom-0'>
+                                                <h3 class='card-title lh-sm fs-5'>المنتجات</h3>
+                                                <i class='lab la-product-hunt' style='font-size: 40px !important; color: var(--bs-primary) !important;'></i>
+                                            </div>
+                                            <div class='card-body pt-0'>
+                                                <div class='progress h-1 mt-2 mb-2'>
+                                                    <div class='progress-bar' style='width: 80%; background: var(--bs-primary);' role='progressbar'></div>
+                                                </div>
+                                            </div>
+                                            <div class='card-footer px-1 border-0 pt-0'>
+                                                <div class='d-flex justify-content-center'>
+                                                    <a href='products.html' class='link-hover text-white m-0 px-1'><i class='bi bi-folder-symlink'></i> مشاهدة المزيد</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6 col-xl'>
+                                        <div class='card border-0 bg-blue img-card box-primary-shadow'>
+                                            <div class='card-header d-flex justify-content-between pb-0 border-bottom-0'>
+                                                <h3 class='card-title lh-sm fs-5'>العملاء</h3>
+                                                <i class='las la-user-friends' style='font-size: 40px !important; color: var(--bs-primary) !important;'></i>
+                                            </div>
+                                            <div class='card-body pt-0'>
+                                                <div class='progress h-1 mt-2 mb-2'>
+                                                    <div class='progress-bar' style='width: 80%; background: var(--bs-primary);' role='progressbar'></div>
+                                                </div>
+                                            </div>
+                                            <div class='card-footer px-1 border-0 pt-0'>
+                                                <div class='d-flex justify-content-center'>
+                                                    <a href='' class='link-hover text-white m-0 px-1'><i class='bi bi-folder-symlink'></i> مشاهدة المزيد</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6 col-xl'>
+                                        <div class='card border-0 bg-blue img-card box-primary-shadow'>
+                                            <div class='card-header d-flex justify-content-between pb-0 border-bottom-0'>
+                                                <h3 class='card-title lh-sm fs-5'>الفئات</h3>
+                                                <i class='las la-stream' style='font-size: 40px !important; color: var(--bs-primary) !important;'></i>
+                                            </div>
+                                            <div class='card-body pt-0'>
+                                                <div class='progress h-1 mt-2 mb-2'>
+                                                    <div class='progress-bar' style='width: 80%; background: var(--bs-primary);' role='progressbar'></div>
+                                                </div>
+                                            </div>
+                                            <div class='card-footer px-1 border-0 pt-0'>
+                                                <div class='d-flex justify-content-center'>
+                                                    <a href='' class='link-hover text-white m-0 px-1'><i class='bi bi-folder-symlink'></i> مشاهدة المزيد</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6 col-xl'>
+                                        <div class='card border-0 bg-blue img-card box-primary-shadow'>
+                                            <div class='card-header d-flex justify-content-between pb-0 border-bottom-0'>
+                                                <h3 class='card-title lh-sm fs-5'>المستخدمين</h3>
+                                                <i class='las la-user-circle' style='font-size: 40px !important; color: var(--bs-primary) !important;'></i>
+                                            </div>
+                                            <div class='card-body pt-0'>
+                                                <div class='progress h-1 mt-2 mb-2'>
+                                                    <div class='progress-bar' style='width: 80%; background: var(--bs-primary);' role='progressbar'></div>
+                                                </div>
+                                            </div>
+                                            <div class='card-footer px-1 border-0 pt-0'>
+                                                <div class='d-flex justify-content-center'>
+                                                    <a href='' class='link-hover text-white m-0 px-1'><i class='bi bi-folder-symlink'></i> مشاهدة المزيد</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-md-6 col-lg-6 col-xl'>
+                                        <div class='card border-0 bg-blue img-card box-primary-shadow'>
+                                            <div class='card-header d-flex justify-content-between pb-0 border-bottom-0'>
+                                                <h3 class='card-title lh-sm fs-5'>المتاجر</h3>
+                                                <i class='las la-store-alt' style='font-size: 40px !important; color: var(--bs-primary) !important;'></i>
+                                            </div>
+                                            <div class='card-body pt-0'>
+                                                <div class='progress h-1 mt-2 mb-2'>
+                                                    <div class='progress-bar' style='width: 80%; background: var(--bs-primary);' role='progressbar'></div>
+                                                </div>
+                                            </div>
+                                            <div class='card-footer px-1 border-0 pt-0'>
+                                                <div class='d-flex justify-content-center'>
+                                                    <a href='' class='link-hover text-white m-0 px-1'><i class='bi bi-folder-symlink'></i> مشاهدة المزيد</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW-1 END -->
+
+                        <!-- ROW-2 -->
+                        <div class='row'>
+                            <div class='col-sm-12 col-md-12 col-lg-12 col-xl-9'>
+                                <div class='card border border-1 rounded-4'>
+                                    <div class='card-header'>
+                                        <h3 class='card-title fw-bold text-primary fs-4'>مخطط المبيعات خلال الأسبوع</h3>
+                                    </div>
+                                    <div class='card-body'>
+                                        <div id="chartp-products5" class="chartsh"></div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- COL END -->
+                            <div class='col-sm-12 col-md-12 col-lg-12 col-xl-3'>
+                                <div class='card border bg-primary'>
+                                    <div class='card-header border-0'>
+                                        <h3 class='card-title fw-bold text-white fs-5'>أخر الفواتير</h3>
+                                    </div>
+                                    <div class='card-body'>
+                                        <div class='row mb-4'>
+                                            <div class='col-3 mb-sm-0 mb-3'>
+                                                <i class='bi bi-newspaper text-blue fs-3'></i>
+                                            </div>
+                                            <div class='col-9 align-self-center ps-sm-0'>
+                                                <div class='d-flex align-items-end justify-content-between mb-1'>
+                                                    <div>
+                                                        <h6 class='mb-1 text-blue'><a href='#'> فهد الحربي</a></h6>
+                                                        <h6 class='mb-1 fs-8 text-white'> منذ ساعتين</h6>
+                                                    </div>
+                                                    <h6 class='fw-semibold text-white mb-1'>SR <span class='fs-11'>(30)</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row mb-4'>
+                                            <div class='col-3 mb-sm-0 mb-3'>
+                                                <i class='bi bi-newspaper text-blue fs-3'></i>
+                                            </div>
+                                            <div class='col-9 align-self-center ps-sm-0'>
+                                                <div class='d-flex align-items-end justify-content-between mb-1'>
+                                                    <div>
+                                                        <h6 class='mb-1 text-blue'><a href='#'> فهد الحربي</a></h6>
+                                                        <h6 class='mb-1 fs-8 text-white'> منذ ساعتين</h6>
+                                                    </div>
+                                                    <h6 class='fw-semibold text-white mb-1'>SR <span class='fs-11'>(30)</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row mb-4'>
+                                            <div class='col-3 mb-sm-0 mb-3'>
+                                                <i class='bi bi-newspaper text-blue fs-3'></i>
+                                            </div>
+                                            <div class='col-9 align-self-center ps-sm-0'>
+                                                <div class='d-flex align-items-end justify-content-between mb-1'>
+                                                    <div>
+                                                        <h6 class='mb-1 text-blue'><a href='#'> فهد الحربي</a></h6>
+                                                        <h6 class='mb-1 fs-8 text-white'> منذ ساعتين</h6>
+                                                    </div>
+                                                    <h6 class='fw-semibold text-white mb-1'>SR <span class='fs-11'>(30)</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row mb-4'>
+                                            <div class='col-3 mb-sm-0 mb-3'>
+                                                <i class='bi bi-newspaper text-blue fs-3'></i>
+                                            </div>
+                                            <div class='col-9 align-self-center ps-sm-0'>
+                                                <div class='d-flex align-items-end justify-content-between mb-1'>
+                                                    <div>
+                                                        <h6 class='mb-1 text-blue'><a href='#'> فهد الحربي</a></h6>
+                                                        <h6 class='mb-1 fs-8 text-white'> منذ ساعتين</h6>
+                                                    </div>
+                                                    <h6 class='fw-semibold text-white mb-1'>SR <span class='fs-11'>(30)</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row mb-4'>
+                                            <div class='col-3 mb-sm-0 mb-3'>
+                                                <i class='bi bi-newspaper text-blue fs-3'></i>
+                                            </div>
+                                            <div class='col-9 align-self-center ps-sm-0'>
+                                                <div class='d-flex align-items-end justify-content-between mb-1'>
+                                                    <div>
+                                                        <h6 class='mb-1 text-blue'><a href='#'> فهد الحربي</a></h6>
+                                                        <h6 class='mb-1 fs-8 text-white'> منذ ساعتين</h6>
+                                                    </div>
+                                                    <h6 class='fw-semibold text-white mb-1'>SR <span class='fs-11'>(30)</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-3 mb-sm-0 mb-3'>
+                                                <i class='bi bi-newspaper text-blue fs-3'></i>
+                                            </div>
+                                            <div class='col-9 align-self-center ps-sm-0'>
+                                                <div class='d-flex align-items-end justify-content-between mb-1'>
+                                                    <div>
+                                                        <h6 class='mb-1 text-blue'><a href='#'> فهد الحربي</a></h6>
+                                                        <h6 class='mb-1 fs-8 text-white'> منذ ساعتين</h6>
+                                                    </div>
+                                                    <h6 class='fw-semibold text-white mb-1'>SR <span class='fs-11'>(30)</span></h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- COL END -->
+                        </div>
+                        <!-- ROW-2 END -->
+
+                        <!-- ROW-3 -->
+                        <div class='row'>
+                            <div class='col-xl-4 col-md-12'>
+                                <div class='card p-1 border border-1'>
+                                    <div class='card-body p-2'>
+                                        <div class='media media-lg d-flex align-items-center justify-content-between mt-0'>
+                                            <img class='avatar avatar-xl rounded-circle bradius me-3' style='width: 90px !important; height: 90px !important;' src='assets/images/unkown-user-img.svg' alt='Generic placeholder image'>
+                                            <div class='media-body text-center'>
+                                                <h4 class='mt-0 mb-1 text-primary fs-4'>فهد الحربي</h4>
+                                                <p class='text-muted mb-0 fs-6'>demo@gmail.com </p>
+                                                <a href='#' class='btn btn-blue mt-3'>تفاصيل الحساب</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-xl-4 col-md-12'>
+                                <div class='card p-1 border border-1'>
+                                    <div class='card-body'>
+                                        <div class='row mb-4'>
+                                            <div class='col-sm-2 col-lg-3 col-xl-3 col-xxl-2 mb-sm-0 mb-3'>
+                                                <i class='fa fa-sort-amount-asc fs-3'></i>
+                                            </div>
+                                            <div class='col-sm-10 col-lg-9 col-xl-9 col-xxl-10 ps-sm-0'>
+                                                <div class='d-flex align-items-end justify-content-between mb-1'>
+                                                    <h6 class='mb-1 text-blue'> مدة الاشتراك</h6>
+                                                    <h6 class='fw-semibold mb-1'>يوم <span class='fs-11'>(30)</span></h6>
+                                                </div>
+                                                <div class='progress h-1'>
+                                                    <div class='progress-bar bg-blue' style='width: 70%;'
+                                                        role='progressbar'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ROW-3 END -->
+
+                        
                     </div>
                     <!-- CONTAINER END -->
                 </div>
@@ -257,7 +524,98 @@
 
     </div>
     <!-- /page -->
+
+    <!--Models-->
     
+    <div class="modal fade" id="profilemodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content rounded-4">
+                <div class="modal-header">
+                    <h5 class="modal-title text-blue"><i class="bi bi-person-vcard-fill text-primary"></i> تعديل بيانات حسابي</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body text-primary">
+                        <div class="form-group">
+                            <label for="formFile" class="form-label mt-0">تحديث صورة الملف الشخصي</label>
+                            <input class="form-control" type="file">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">الاسم الأول</label>
+                                    <input type="text" class="form-control" id="exampleInputname" placeholder="فهد">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname1">الاسم الأخير</label>
+                                    <input type="text" class="form-control" id="exampleInputname1" placeholder="الحربي">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="demo@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputnumber">رقم الهاتف</label>
+                            <input type="tel" class="form-control" id="exampleInputnumber" placeholder="">
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary link-hover" data-bs-dismiss="modal">إلغاء</button>
+                    <button class="btn btn-blue link-hover">حفظ الاعدادت</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="passmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content rounded-4">
+                <div class="modal-header">
+                    <h5 class="modal-title text-blue"><i class="bi bi-person-fill-lock text-primary"></i> تغيير كلمة المرور</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body text-primary">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">كلمة المرور القديمة</label>
+                                    <input type="password" class="form-control" id="exampleInputname" placeholder="">
+                                    <div class='text-end mt-1'><a  class="text-danger" href="javascript:void(0)">نسيت كلمة المرور؟</a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" id="exampleInputname" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname1">تأكيد كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" id="exampleInputname1" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary link-hover" data-bs-dismiss="modal">إلغاء</button>
+                    <button class="btn btn-blue link-hover">حفظ الاعدادت</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <script src='assets/js/appMain.js'></script>

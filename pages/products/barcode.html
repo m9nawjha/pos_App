@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang='ar'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>برنامج عربة للمحاسبة وإدارة المبيعات</title>
+    <base href='../../'> 
+    <link rel='shortcut icon' href='assets/images/favicon.png' type='image/x-icon'>
+    <link rel='stylesheet' href='assets/library/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <link rel='stylesheet' href='assets/css/style-main.css'>
+    <link rel='stylesheet' href='assets/font/icon.css'>
+    <link rel='stylesheet' href='assets/font/@fontsource/tajawal/index.css'>   
+</head>
+<body class='app sidebar-mini rtl light-mode'>
+    <!-- page -->
+    <div class='page'>
+        <div class='page-main'>
+
+            <!-- app-Header -->
+            <div class='app-header header sticky shadow-sm'>
+                <div class='container-fluid main-container'>
+                    <div class='d-flex'>
+                        <a aria-label='Hide Sidebar' class='app-sidebar__toggle text-white link-hover mt-3' data-bs-toggle='sidebar' href='javascript:void(0)'></a>
+                        <a class='logo-horizontal d-flex d-md-none' href='index.html'>
+                            <img src='assets/images/logo-white.svg' class='header-brand-img mx-2' style='height: 50px !important;' alt='logo'>
+                        </a>
+                        <div class='main-header-center ms-3 d-none d-lg-block'>
+                            <input type='text' class='form-control' id='typehead' placeholder='كلمة البحث هنا'>
+                            <button class='btn px-0 pt-2'><i class='bi bi-search'></i></button>
+                        </div>
+                        <div class='d-flex order-lg-2 ms-auto header-right-icons'>
+                            <div class='dropdown d-flex profile-1 me-2'>
+                                <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link  leading-none d-flex'>
+                                    <span class='avatar brround cover-image mx-4' data-bs-image-src='assets/images/unkown-user-img.svg' style='background: url(assets/images/unkown-user-img.svg) center center; border: 0.2rem solid var(--bs-white)'> <span class='avatar-status bg-green'></span> </span>
+                                    <div class='d-none d-sm-block'>
+                                        <h5 class='text-white me-2 mb-0 fs-6'> فهد الحربي </h5>
+                                        <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>    
+                                    </div>
+                                    <i class='bi bi-chevron-down fs-6 text-primary'></i>
+                                </a>
+                                <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile_dropdown rounded-4'>
+                                    <div class='drop-heading'>
+                                        <div class='text-center'>
+                                            <h5 class='text-blue mb-0 fs-14 fw-semibold'>فهد الحربي</h5>
+                                            <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>
+                                        </div>
+                                    </div>
+                                    <div class='dropdown-divider m-0'></div>
+                                    <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#profilemodal'>
+                                        <i class='dropdown-icon fs-4 las la-user-cog text-blue'></i> تعديل حسابي
+                                    </a>
+                                    <a class='dropdown-item' href='#' data-bs-toggle='modal' data-bs-target='#passmodal'>
+                                        <i class='dropdown-icon fs-4 bi bi-file-lock text-blue'></i> تغيير كلمة المرور
+                                    </a>
+                                    <a class='dropdown-item' href='login.html'>
+                                        <i class='dropdown-icon fs-4 las la-sign-out-alt text-blue'></i> تسجيل الخروج
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SEARCH -->
+                            <button class='navbar-toggler navresponsive-toggler text-white d-lg-none ms-auto' type='button'
+                                data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent-4'
+                                aria-controls='navbarSupportedContent-4' aria-expanded='false'
+                                aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon bi bi-three-dots-vertical'></span>
+                            </button>
+                            <div class='navbar navbar-collapse responsive-navbar p-0'>
+                                <div class='collapse navbar-collapse bg-blue' id='navbarSupportedContent-4'>
+                                    <div class='d-flex order-lg-2'>
+                                        <div class='dropdown d-lg-none d-flex'>
+                                            <a href='javascript:void(0)' class='nav-link icon' data-bs-toggle='dropdown'>
+                                                <i class='bi bi-search'></i>
+                                            </a>
+                                            <div class='dropdown-menu header-search dropdown-menu-start'>
+                                                <div class='input-group w-100 p-2'>
+                                                    <input type='text' class='form-control' style='border-radius: 50px !important;' placeholder='البحث....'>
+                                                    <div class='input-group-text btn btn-primary ms-2'>
+                                                        <i class='bi bi-search'></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--pos-->
+                                        <div class='d-flex'>
+                                            <a class='nav-link icon' href='pages/pos/index.html' data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="نقاط البيع">
+                                                <i class='bi bi-ui-checks-grid fs-4'></i>
+                                            </a>
+                                        </div>
+                                        <!-- SETTING -->
+                                        <div class='d-flex'>
+                                            <a class='nav-link icon' href='pages/settings/index.html' data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="المنتج">
+                                                <i class='bi bi-gear-fill fs-4'></i>
+                                            </a>
+                                        </div>
+                                        <!-- /SETTING -->
+
+                                        <!-- NOTIFICATIONS -->
+                                        <div class='dropdown  d-flex notifications'>
+                                            <a class='nav-link icon' data-bs-toggle='dropdown'>
+                                                <i class='bi bi-bell-fill fs-4'></i><span class='spinner-grow text-danger position-absolute top-0 translate-middle' style='left: 70%; width: 10px; height: 10px;' role='status'>
+                                                    <span class='visually-hidden'>3</span>
+                                                  </span>                                            
+                                            </a>
+                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow-sm rounded-4'>
+                                                <div class='drop-heading border-bottom'>
+                                                    <div class='d-flex'>
+                                                        <h6 class='mt-1 mb-0 fs-16 fw-semibold text-blue'>الإشعارات
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <div class='notifications-menu notifications-menu-scroll' style='overflow: scroll;'>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class='dropdown-divider m-0'></div>
+                                                <a href='notify-list.html'
+                                                    class='dropdown-item text-center p-3 text-blue'>مشاهدة جميع الاشعارات</a>
+                                            </div>
+                                        </div>
+                                        <!-- /NOTIFICATIONS -->
+
+
+                                        <div class='dropdown d-flex'>
+                                            <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link link-hover  leading-none d-flex btn btn-primary py-2 rounded-pill' >
+                                                <div data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="اختيار المتجر">
+                                                    <i class='bi bi-shop text-white fs-6'></i>
+                                                    <span class="fs-6 text-white ms-2 d-none "> المتاجر</span>
+                                                    <i class='bi bi-chevron-down fs-6 text-white ms-2'></i>
+                                                </div>
+                                            </a>
+                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow rounded-4'>
+
+                                                <div class='dropdown-divider mt-0'></div>
+                                                <a class='dropdown-item' href='#'>
+                                                    <i class='dropdown-icon fs-4 bi bi-arrow-left-square'></i> اسم المتجر
+                                                </a>
+                                                <a class='dropdown-item' href='#'>
+                                                    <i class='dropdown-icon fs-4 bi bi-arrow-left-square'></i> اسم المتجر
+                                                </a>
+                                                <a class='dropdown-item' href='#'>
+                                                    <i class='dropdown-icon fs-4 bi bi-arrow-left-square'></i> اسم المتجر
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /app-Header -->
+
+            <!--app-sidebar-->
+            <div class='sticky shadow-sm'>
+                <div class='app-sidebar__overlay' data-bs-toggle='sidebar'></div>
+                <div class='app-sidebar'>
+                    <div class='side-header border-bottom-0'>
+                        <a class='header-brand1' href='/'>
+                            <img src='assets/images/logo.svg' class='header-brand-img light-logo' style='height: 70px; width: 70px; border-radius: 50%;' alt='logo'>
+                            <img src='assets/images/logo.svg' class='header-brand-img mt-1 light-logo1'  style='height: 70px; width: 70px; border-radius: 50%;' alt='logo'>
+                        </a>
+                        <!-- LOGO -->
+                    </div>
+                    <div class='main-sidemenu'>
+                        <div class='slide-left disabled' id='slide-left'><svg xmlns='http://www.w3.org/2000/svg'
+                                fill='#7b8191' width='24' height='24' viewBox='0 0 24 24'>
+                                <path d='M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z' />
+                            </svg></div>
+                        <ul class='side-menu' id='side-menu-ul'></ul>
+                        <div class='slide-right' id='slide-right'><svg xmlns='http://www.w3.org/2000/svg' fill='#7b8191'
+                                width='24' height='24' viewBox='0 0 24 24'>
+                                <path d='M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z' />
+                            </svg></div>
+                    </div>
+                </div>
+                <!--/APP-SIDEBAR-->
+            </div> 
+            <!--/app-sidebar-->
+
+
+            <!--app-content open-->
+            <div class='main-content app-content' style='margin-top: 75px;'>
+                <div class='side-app'>
+
+                    <!-- CONTAINER -->
+                    <div class='main-container container-fluid'>
+                        <div class='page-header d-block'>
+                            <div>
+                                <ol class="breadcrumb1 d-block d-sm-flex border border-blue border-opacity-10 rounded-2 shadow-sm justify-content-between align-items-center pt-5" style='background: var(--bs-secondary);'>
+                                    <h2 class='page-title'><i class='bi bi-cart3 bg-blue text-primary rounded-circle px-2 py-1 my-2'></i> برنامج عربة <span class='text-muted fs-6 mx-1'>للمحاسبة وإدارة المبيعات</span></h2>
+                                    <div class='d-block d-sm-flex justify-content-end my-2'>
+                                        <li class="breadcrumb-item"><i class="bi bi-house-heart-fill me-2 text-blue" aria-hidden="true"></i><a class="text-blue" href="javascript:void(0)">الرئيسية</a></li>
+                                        <li class="breadcrumb-item link-hover"><i class="las la-chevron-left mx-2 text-blue" aria-hidden="true"></i><a class="text-primary" href="javascript:void(0)">المنتجات</a></li>
+                                        <li class="breadcrumb-item active mt-1"><i class="las la-chevron-left mx-2 text-blue" aria-hidden="true"></i>طباعة باركود</li>
+                                    </div>
+                                    <div class='text-end'>
+                                        <span class='text-muted' id='date_time'></span>
+                                    </div>
+                                </ol>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                              <div class="card p-0 border border-1">
+                                <div class="card-header d-block d-md-flex justify-content-between">
+                                    <h2 class='page-title mb-5'><i class='bi bi-caret-left-fill text-primary'></i>طباعة باركود</h2>
+                                  <button type="submit" class="btn btn-info mx-2" onclick="print()"><i class="fa fa-upload" aria-hidden="true"></i> طباعة</button>
+                                </div>
+                                <div class="card-body">
+                                  <div class="table-responsive">
+                                      <table class="table table-hover table-bordered border text-nowrap mb-0 text-center">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>شاي بريز</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAABICAIAAABdvs0WAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABrUlEQVR4nO2cy47DIAwAYbX//8vsIVJlYUAppKNqNXOKHPOaIEovrq21MqfWWkpprdVar8wrcgVjwuz51TAnxIf4qhsld5untEjrxsqzurmKxfRywpCfxTt5Fl1z6JpD1xy65tA1h645dM2haw5dc+iaQ9ccuubQNYeuOXTNoWsOXXPomkPXHLrm0DWHrjl0zaFrDl1z6JpD1xy65tA1h645dM2haw5dc+iaQ9ccuubQNYeuOXTNoWsOXXPomkPXHLrm0DWHrjl0zaFrDl1z6JpD1xy65tA1h645dM2haw5dc+iaQ9ccdV1uVR7kd7vlq1ZuGRXQ3Qt2nXdFf7f7zEV8c2aMDLs935SbZ8hr+DjRw2DX+SMD5c5nmS0wm8whX3ded2vLi3+3t3ebD4t0P8L+GXKxPgoWmbXWriJ4CevMWztmDgc6DA559sfsyHUsaR6D10N3PsbMbu+sS6PHL5GrxOeBcnA2+VnzD90Xjlyvf9PWmTNuno/Dge6b+qjTGadnSORwAcPted/puehPf4D9s//+tenxO99woMNgGbleXAQ38L8Mx9fd+f4xf0JrXJEcT0ZAAAAAAElFTkSuQmCC"
+                                                        alt="020843221271" class="bcimg"><br><span class="price">السعر: ر.س 8.00</span>
+                                                </td>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>ملكات النحل</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAABICAIAAABdvs0WAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABiUlEQVR4nO3cy26DMBQAUbvq//+yu0BCVvyoY1+GzZwVcnmYCQ1kQy6lpLGcc0qplJJzvta8Rq7BeoVr+d7bx/qT5XZhstW9549jreyhu87iSbVzqHfYrtD1M/mbYtmaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTm25tiaY2uOrTl5/rpVBfo92bh9Oe79At3Ue6tu4GB3DuEHqkdGE1i3/x3SzuM+7XqiTwx25/DEgUplO9Rts3X9+um3tB/208c6POXN75CVN5RPBg83T9XJj/69YqcUIv45pHvJjwa73/j/bj65yr46+vqURof7ytG9sas7p/k9bWPzNLhU1zdfn1KU+NYrDs9q9OTzxJQCP4DNW9zoYejwWerFZ775lN5srQ3+Ruf8AYTvRJhmhG4EAAAAAElFTkSuQmCC"
+                                                        alt="100200400027" class="bcimg"><br><span class="price">السعر: ر.س 27.00</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>العبكر</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAABICAIAAABdvs0WAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABfUlEQVR4nO3cy07EIBhA4WJ8/1fGRZPJH25BoGe8nG81YqlwnKl105RzvvpSStd15ZxTSveR98g9GA+4X7/OVhw/eF2/aB4Zj4lfzp8hTi8WHFc+2HXcXW8Ng5gfg+/pLFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNcfWHFtzbM2xNSeNH7eqgz53JtcPxy2e4/sHBpvbXLN+DYkriyM55/gc41892NzmssXWxQOj3+hV5wlnt7l4DZl5QvlgcHN6MVKcbXL6zJLO/hbP34c03wu9weYVf3J6/Xn/7k+fXNIpW38bmybfIL0tbb6/5qfPL+mU99xfP72rBcCSFq/99eWv/jgP7qU2pz8x2FxSb51rfsrtxH/g/+icL67jQY08t/vgAAAAAElFTkSuQmCC"
+                                                        alt="100200600021" class="bcimg"><br><span class="price">السعر: ر.س 22.00</span>
+                                                </td>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>قهوة لقمتي 50ك</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAABICAIAAAC4DMo/AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKUlEQVR4nO3dwQ6CMBAA0a7//8/roUmzKUg8tGTSzLu5VIRMVLxIZGb7LSJaa5kZEX1ln/RhXTDWjzlqQT+FcV714T9nNz23vlDded007XxacOvzsE0vMwaIMUCMAWIMEGOAGAPEGCDGADEGiDFAjAFiDBBjgBgDxBggxgAxBogxQIwBYgwQY4AYA8QYIMYAMQaIMUCMAWIMEGOAGAPEGCDGADEGiDFAjAFiDBBjgBgDxBggxgAxBogxQIwBYgwQY4AYA8QYIMYAMQaIMUCMAWIMEGOAGAPEGCDGADEGiDFAjAESz3+VrjftemdERP1n/VOHa22JcXvQ5w2XWx9j3Ivi7OEO62PcHvd5wx28mgIxBogxQNZ/NV0vPKYbSJ0xbBv4ow/EjymQLyhFzMOFeLPQAAAAAElFTkSuQmCC"
+                                                        alt="11111111111" class="bcimg"><br><span class="price">السعر: ر.س 20.00</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>زيت شعر</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAABICAIAAABA7DHIAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABoklEQVR4nO2dy27DIBAAoer//zI9oFqUl3GC00w0c3IW2ACDHDuXjSmlMCbGGEJIKcUYc88cycH8sYy3fcoMVYfquttz1Pl04KXrvIpj2mW2UeZqB8oM1cwni2q/fa7ja9Im74a2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkjEeZkTeSu+t2ec1LrpVtoJvco5HxPcy+Y7YTnjSdOhrTT3ecHt7LR11OLqNj2W81i/hL13wrmqqhxZ2TQPTu4wp8NXasFdDXZzvuZI3f5MOP8Za+NtMP0S/u7a4vAcbKdxafh6zpUSdQ+z/ymjS/fAPnlIF4ePtm/92xdz3uopc7ut6uhdHf7kFtyxg/+lKux932plTJb0mmfo0ZS25zxd+xZ8OybhP08kfgB4qXSY5MwxwAAAAABJRU5ErkJggg=="
+                                                        alt="1400300200022" class="bcimg"><br><span class="price">السعر: ر.س 20.00</span>
+                                                </td>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>زيت شعر</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAABICAIAAABA7DHIAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABqUlEQVR4nO2dy44CIRAAYbP//8vsgawhPFpUxkwlVaeRl92WMoyXzqWUtCbnnFIqpeSc68jaUhvry7Z9HNOu0A3orqcjV4OfTuyuu4vpgEfY7WqrlVcfy7jmGM90kW7AlJ+gT+6Gtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZIaIuEtkhoi4S2SGiLhLZI5LjMidyK3+MrBrVuppV20qxyzs0b9zM6y+GdsI046Hok2eZJadzP6Dgnf1tjFau26701b7tRBxldF/NJW6sou2pmY1fcGOwwT6fv1IJ7O6Qxo66U3HEuPxPGt7HpnaBrLP+kYfPZmV4bxzBemt5NXGVE2gkDptGvEt5cc3P66sPdf/fgxPRlLrc1fitfYqea4nXTp3yY0SecfN4aQ5/eZr55gl+FBD3B+3RMwn+eSPwBGpNopq38kUkAAAAASUVORK5CYII="
+                                                        alt="1400300200046" class="bcimg"><br><span class="price">السعر: ر.س 20.00</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>زيت شعر</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAABICAIAAABA7DHIAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABqElEQVR4nO2dQW7DIBAAoer/v0wPViKKF0JS7DLSzMlZs9h4MEa5bC6lpD4555RSKSXnfLQ8Ikfw+FnHz23qHpoGzXHYstf4ZWJzfA428Wd6c+e9416w7nZ86Tr3POqQr8E52Q1tkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHI4zInshXfy3sc1LoJ6wilqHLOzsE68oyHwbSaxe9WU++pd2pcmGnz4HlQM8ElrPxu1XWnzqc+67OUsu1afbOqtHYlHKsKl4vQYhMMF6jJ9JlacB8H7+fyPeH4MxYumE2wPEi/n9pk+hE838Zb6b2F/c4XK12xywgJ52Y4qvmhTqb3nuD81fdZii+31Uznd9P/OFsvmuz/8mKltXvCl7vY+3fwvVtaciG2Lbka/3ki8QOIRHGOqYi03gAAAABJRU5ErkJggg=="
+                                                        alt="1400300200077" class="bcimg"><br><span class="price">السعر: ر.س 37.00</span>
+                                                </td>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>زيت شعر</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAABICAIAAABA7DHIAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABrElEQVR4nO2dy27DIBAAoer//zI9oFoUFoIbEmWkmZOzPMwyFsa5kEspaU7OOaVUSsk515o1UoP1Zxsf67Q9dBW667DmrPLDht31rLf24hp221vYc5hm2EN430XbtY6vRZl8GtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIqEtEtoioS0S2iKhLRLaIpHXx5zIR/F9vMfFWTfhOUIpOjmHGAzTPMvhlbBNY1F05dOaQwd3ZuB5Ttpqj5sai/7X5zUpCF6qKp1dCdequsPE2qJ1cLHsPGy+cxbc3WBNpDs1Li3TPMXL94Tr11i46HfB8kv6O2ubzWtwHMat5l3DNF8exzQPcn6XERI+bmFu+wlvNp/N4/7d94dEWglDxqfyFk8+s+955NPTaW5y8ntrHGX4mnnnDn42JOgO3q9jEv7zROIHUKNrpAsEHhEAAAAASUVORK5CYII="
+                                                        alt="1400300200084" class="bcimg"><br><span class="price">السعر: ر.س 23.00</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>زيت شعر</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAABICAIAAABA7DHIAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABr0lEQVR4nO2dQY7DIAwAYbX//zJ7iFShYFzUhSojzZxSx6ZxJqW0F2prrcyptZZSWmu11ivzilzB62UfH3P6EW4Jt+Mwc5b8tjA57kfug6/L7kebHScJyX27NdXn3BJCfpJz8jS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEVCWyS0RUJbJLRFQlsktEWi5tucyKP43T5istdNuI9QiXbOeU4w7GjM7CPjCLvYPBOOFx2eevXft/rAYNhRmNk6Pr9979hpq9/aajz12Zin+89JOkpKypkPVtk7E+aqbtuR9afy4GyCWilf2Qtub/lRjq8J86+xMT4G+xnmNp2ulF/B8LtnsTxkVl6OfbDKiVVGSPgYhl2tt7pYPruDJ979NMdtzZZSi/zzaT39sH/5vXb+3nq7iv3+Cn52SefKMbbkNP7zROIP+SNrjKlILO0AAAAASUVORK5CYII="
+                                                        alt="1400300200107" class="bcimg"><br><span class="price">السعر: ر.س 22.00</span>
+                                                </td>
+                                                <td>
+                                                    <h4>محامص ذوق الشموخ</h4><strong>زيت شعر</strong><br><img
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAABICAIAAABA7DHIAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABr0lEQVR4nO2dy27DIBAA2ar//8v0YNWi5hFsk9QjzZwcXmEZQkguGznn1CciUko554jYWm4lW+H2siyv25QjHBocnpste41fduw9H+ZcPuzTLkdrjjwIs2zQW5+6bx11k69BnTwNbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2R0BYJbZHQFgltkdAWCW2RiHGaE3kU38tHHOS6aeYRSq3MOc8p7EU0GeZaFp+EZcCDqj2e0twDC3sRTYa5nJW2yrxTddW1Mffl+xeaEb0jzElWnoTjGA7pyMqqcWHvgJrpPpML7mz3C2Gu4u13wvH5PrNz8y/p71LOb/yIqKdx9nMz5n3fVSXrbxlNmtvt1M693L23jjffvQnpJGxSX65OcXPPfmbLp9thTrLy91Y9y8Gt9zNX8N6U7nQ/FeZa/HVMwn+eSPwAiCZZpE/iUeAAAAAASUVORK5CYII="
+                                                        alt="1400300200114" class="bcimg"><br><span class="price">السعر: ر.س 23.00</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                              <div class="card-footer">
+                                <nav aria-label="Page navigation example">
+                                  <ul class="pagination justify-content-center">
+                                    <li class="page-item mx-1">
+                                      <a class="page-link active text-primary rounded-2" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                    </li>
+                                    <li class="page-item mx-1"><a class="page-link rounded-2" href="#">1</a></li>
+                                    <li class="page-item mx-1"><a class="page-link rounded-2" href="#">2</a></li>
+                                    <li class="page-item mx-1"><a class="page-link rounded-2" href="#">3</a></li>
+                                    <li class="page-item mx-1">
+                                      <a class="page-link active text-primary rounded-2" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                              </div>
+                            </div>
+                        </div>
+                    <!-- CONTAINER END -->
+                </div>
+            </div>
+            <!--app-content close-->        
+        </div>
+
+        <!-- FOOTER -->
+        <footer class='footer'>
+            <div class='container'>
+                <div class='row align-items-center flex-row-reverse'>
+                    <div class='col-md-12 col-sm-12 text-center'>
+                        <h6 class='text-primary'>جميع الحقوق محفوظة <a class='text-blue link-hover' href='#'>الإبداع التقني</a></h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER END -->
+
+    </div>
+    <!-- /page -->
+
+    <!--Models-->
+    
+    <div class="modal fade" id="profilemodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content rounded-4">
+                <div class="modal-header">
+                    <h5 class="modal-title text-blue"><i class="bi bi-person-vcard-fill text-primary"></i> تعديل بيانات حسابي</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body text-primary">
+                        <div class="form-group">
+                            <label for="formFile" class="form-label mt-0">تحديث صورة الملف الشخصي</label>
+                            <input class="form-control" type="file">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">الاسم الأول</label>
+                                    <input type="text" class="form-control" id="exampleInputname" placeholder="فهد">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname1">الاسم الأخير</label>
+                                    <input type="text" class="form-control" id="exampleInputname1" placeholder="الحربي">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="demo@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputnumber">رقم الهاتف</label>
+                            <input type="tel" class="form-control" id="exampleInputnumber" placeholder="">
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary link-hover" data-bs-dismiss="modal">إلغاء</button>
+                    <button class="btn btn-blue link-hover">حفظ الاعدادت</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="passmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content rounded-4">
+                <div class="modal-header">
+                    <h5 class="modal-title text-blue"><i class="bi bi-person-fill-lock text-primary"></i> تغيير كلمة المرور</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body text-primary">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">كلمة المرور القديمة</label>
+                                    <input type="password" class="form-control" id="exampleInputname" placeholder="">
+                                    <div class='text-end mt-1'><a  class="text-danger" href="javascript:void(0)">نسيت كلمة المرور؟</a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" id="exampleInputname" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname1">تأكيد كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" id="exampleInputname1" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary link-hover" data-bs-dismiss="modal">إلغاء</button>
+                    <button class="btn btn-blue link-hover">حفظ الاعدادت</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <script src=""></script>
+
+    <script src='assets/js/appMain.js'></script>
+</body>
+</html>

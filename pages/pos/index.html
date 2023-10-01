@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang='ar'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>برنامج عربة للمحاسبة وإدارة المبيعات</title>
+    <base href='../../'> 
+    <link rel='shortcut icon' href='assets/images/favicon.png' type='image/x-icon'>
+    <link rel='stylesheet' href='assets/library/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <link rel='stylesheet' href='assets/css/style-main.css'>
+    <link rel='stylesheet' href='assets/font/icon.css'>
+    <link rel='stylesheet' href='assets/font/@fontsource/tajawal/index.css'>   
+</head>
+<body class='app sidebar-mini rtl light-mode'>
+    <!-- page -->
+    <div class='page'>
+        <div class='page-main'>
+
+            <!-- app-Header -->
+            <div class='app-header header sticky shadow-sm'>
+                <div class='container-fluid main-container'>
+                    <div class='d-flex'>
+                        <a aria-label='Hide Sidebar' class='app-sidebar__toggle text-white link-hover mt-3' data-bs-toggle='sidebar' href='javascript:void(0)'></a>
+                        <a class='logo-horizontal d-flex d-md-none' href='index.html'>
+                            <img src='assets/images/logo-white.svg' class='header-brand-img mx-2' style='height: 50px !important;' alt='logo'>
+                        </a>
+                        <div class='main-header-center ms-3 d-none d-lg-block'>
+                            <input type='text' class='form-control' id='typehead' placeholder='كلمة البحث هنا'>
+                            <button class='btn px-0 pt-2'><i class='bi bi-search'></i></button>
+                        </div>
+                        <div class='d-flex order-lg-2 ms-auto header-right-icons'>
+                            <div class='dropdown d-flex profile-1 me-2'>
+                                <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link  leading-none d-flex'>
+                                    <span class='avatar brround cover-image mx-4' data-bs-image-src='assets/images/unkown-user-img.svg' style='background: url(assets/images/unkown-user-img.svg) center center; border: 0.2rem solid var(--bs-white)'> <span class='avatar-status bg-green'></span> </span>
+                                    <div class='d-none d-sm-block'>
+                                        <h5 class='text-white me-2 mb-0 fs-6'> فهد الحربي </h5>
+                                        <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>    
+                                    </div>
+                                    <i class='bi bi-chevron-down fs-6 text-primary'></i>
+                                </a>
+                                <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile_dropdown rounded-4'>
+                                    <div class='drop-heading'>
+                                        <div class='text-center'>
+                                            <h5 class='text-blue mb-0 fs-14 fw-semibold'>فهد الحربي</h5>
+                                            <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>
+                                        </div>
+                                    </div>
+                                    <div class='dropdown-divider m-0'></div>
+                                    <a class='dropdown-item' href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#profilemodal'>
+                                        <i class='dropdown-icon fs-4 las la-user-cog text-blue'></i> تعديل حسابي
+                                    </a>
+                                    <a class='dropdown-item' href='javascript:void(0)' data-bs-toggle='modal' data-bs-target='#passmodal'>
+                                        <i class='dropdown-icon fs-4 bi bi-file-lock text-blue'></i> تغيير كلمة المرور
+                                    </a>
+                                    <a class='dropdown-item' href='login.html'>
+                                        <i class='dropdown-icon fs-4 las la-sign-out-alt text-blue'></i> تسجيل الخروج
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- SEARCH -->
+                            <button class='navbar-toggler navresponsive-toggler text-white d-lg-none ms-auto' type='button'
+                                data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent-4'
+                                aria-controls='navbarSupportedContent-4' aria-expanded='false'
+                                aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon bi bi-three-dots-vertical'></span>
+                            </button>
+                            <div class='navbar navbar-collapse responsive-navbar p-0'>
+                                <div class='collapse navbar-collapse bg-blue' id='navbarSupportedContent-4'>
+                                    <div class='d-flex order-lg-2'>
+                                        <div class='dropdown d-lg-none d-flex'>
+                                            <a href='javascript:void(0)' class='nav-link icon' data-bs-toggle='dropdown'>
+                                                <i class='bi bi-search'></i>
+                                            </a>
+                                            <div class='dropdown-menu header-search dropdown-menu-start'>
+                                                <div class='input-group w-100 p-2'>
+                                                    <input type='text' class='form-control' style='border-radius: 50px !important;' placeholder='البحث....'>
+                                                    <div class='input-group-text btn btn-primary ms-2'>
+                                                        <i class='bi bi-search'></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--pos-->
+                                        <div class='d-flex'>
+                                            <a class='nav-link icon' href='pages/pos/index.html' data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="نقاط البيع">
+                                                <i class='bi bi-ui-checks-grid fs-4'></i>
+                                            </a>
+                                        </div>
+                                        <!-- SETTING -->
+                                        <div class='d-flex'>
+                                            <a class='nav-link icon' href='pages/settings/index.html' data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="الإعدادت">
+                                                <i class='bi bi-gear-fill fs-4'></i>
+                                            </a>
+                                        </div>
+                                        <!-- /SETTING -->
+
+                                        <!-- NOTIFICATIONS -->
+                                        <div class='dropdown  d-flex notifications'>
+                                            <a class='nav-link icon' data-bs-toggle='dropdown'>
+                                                <i class='bi bi-bell-fill fs-4'></i><span class='spinner-grow text-danger position-absolute top-0 translate-middle' style='left: 70%; width: 10px; height: 10px;' role='status'>
+                                                    <span class='visually-hidden'>3</span>
+                                                  </span>                                            
+                                            </a>
+                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow-sm rounded-4'>
+                                                <div class='drop-heading border-bottom'>
+                                                    <div class='d-flex'>
+                                                        <h6 class='mt-1 mb-0 fs-16 fw-semibold text-blue'>الإشعارات
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <div class='notifications-menu notifications-menu-scroll' style='overflow: scroll;'>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class='dropdown-divider m-0'></div>
+                                                <a href='notify-list.html'
+                                                    class='dropdown-item text-center p-3 text-blue'>مشاهدة جميع الاشعارات</a>
+                                            </div>
+                                        </div>
+                                        <!-- /NOTIFICATIONS -->
+
+
+                                        <div class='dropdown d-flex'>
+                                            <a href='javascript:void(0)' data-bs-toggle='dropdown' class='nav-link link-hover  leading-none d-flex btn btn-primary py-2 rounded-pill' >
+                                                <div data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="اختيار المتجر">
+                                                    <i class='bi bi-shop text-white fs-6'></i>
+                                                    <span class="fs-6 text-white ms-2 d-none "> المتاجر</span>
+                                                    <i class='bi bi-chevron-down fs-6 text-white ms-2'></i>
+                                                </div>
+                                            </a>
+                                            <div class='dropdown-menu dropdown-menu-end dropdown-menu-arrow rounded-4'>
+
+                                                <div class='dropdown-divider mt-0'></div>
+                                                <a class='dropdown-item' href='javascript:void(0)'>
+                                                    <i class='dropdown-icon fs-4 bi bi-arrow-left-square'></i> اسم المتجر
+                                                </a>
+                                                <a class='dropdown-item' href='javascript:void(0)'>
+                                                    <i class='dropdown-icon fs-4 bi bi-arrow-left-square'></i> اسم المتجر
+                                                </a>
+                                                <a class='dropdown-item' href='javascript:void(0)'>
+                                                    <i class='dropdown-icon fs-4 bi bi-arrow-left-square'></i> اسم المتجر
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /app-Header -->
+
+            <!--app-sidebar-->
+            <div class='sticky shadow-sm'>
+                <div class='app-sidebar__overlay' data-bs-toggle='sidebar'></div>
+                <div class='app-sidebar'>
+                    <div class='side-header border-bottom-0'>
+                        <a class='header-brand1' href='/'>
+                            <img src='assets/images/logo.svg' class='header-brand-img light-logo' style='height: 70px; width: 70px; border-radius: 50%;' alt='logo'>
+                            <img src='assets/images/logo.svg' class='header-brand-img mt-1 light-logo1'  style='height: 70px; width: 70px; border-radius: 50%;' alt='logo'>
+                        </a>
+                        <!-- LOGO -->
+                    </div>
+                    <div class='main-sidemenu'>
+                        <div class='slide-left disabled' id='slide-left'><svg xmlns='http://www.w3.org/2000/svg'
+                                fill='#7b8191' width='24' height='24' viewBox='0 0 24 24'>
+                                <path d='M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z' />
+                            </svg></div>
+                        <ul class='side-menu' id='side-menu-ul'></ul>
+                        <div class='slide-right' id='slide-right'><svg xmlns='http://www.w3.org/2000/svg' fill='#7b8191'
+                                width='24' height='24' viewBox='0 0 24 24'>
+                                <path d='M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z' />
+                            </svg></div>
+                    </div>
+                </div>
+                <!--/APP-SIDEBAR-->
+            </div> 
+            <!--/app-sidebar-->
+
+
+            <!--app-content open-->
+            <div class='main-content app-content' style='margin-top: 75px;'>
+                <div class='side-app'>
+
+                    <!-- CONTAINER -->
+                    <div class='main-container container-fluid'>
+                        <div class='page-header d-block'>
+                            <div>
+                                <ol class="breadcrumb1 d-block d-sm-flex border border-blue border-opacity-10 rounded-2 shadow-sm justify-content-between align-items-center pt-5" style='background: var(--bs-secondary);'>
+                                    <h2 class='page-title'><i class='bi bi-cart3 bg-blue text-primary rounded-circle px-2 py-1 my-2'></i> برنامج عربة <span class='text-muted fs-6 mx-1'>للمحاسبة وإدارة المبيعات</span></h2>
+                                    <div class='d-block d-sm-flex justify-content-end my-2'>
+                                        <li class="breadcrumb-item"><i class="bi bi-house-heart-fill me-2 text-blue" aria-hidden="true"></i><a class="text-blue" href="javascript:void(0)">الرئيسية</a></li>
+                                        <li class="breadcrumb-item active mt-1"><i class="las la-chevron-left mx-2 text-blue" aria-hidden="true"></i>نقاط البيع</li>
+                                    </div>
+                                    <div class='text-end'>
+                                        <span class='text-muted' id='date_time'></span>
+                                    </div>
+                                </ol>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class='page-title mb-5'><i class='bi bi-caret-left-fill text-primary'></i>نقاط البيع</h2>
+                            </div>
+                            <div class="col-auto align-self-center">
+                                <a href="javascript:void(0);" class="d-inline-flex justify-content-end me-4 mb-2"><i class="fe fe-calendar fs-16 me-1 p-3 bg-secondary-transparent text-info bradius"></i>
+                                  <div class="mt-0 mt-3 ms-1 text-muted font-weight-semibold text-info fs-6">Sep-25-2021</div>
+                                </a>
+                              </div>
+                              <div class="col-lg-9 col-md-12 col-sm-12 col-xl-9 text-end">
+                                <ul class="nav justify-content-end ">
+                                  <li class="nav-item">
+                                    <a  class="btn btn-primary my-4 mx-5" aria-current="page" href="sales-list.html" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="شاشة العميل"><i class="las la-desktop fs-4"></i></a>
+                                  </li>
+                                  <li class="nav-item" data-bs-toggle="modal" data-bs-target="#إنهاء_اليومية">
+                                    <a class="btn btn-primary my-4 mx-5" aria-current="page" href='javascript:void(0)' data-bs-toggle="tooltip" data-bs-placement="bottom" title="إنهاء اليومية"><i class="las la-cash-register fs-4"></i></a>
+                                  </li>
+                                  <li class="nav-item"  data-bs-toggle="modal" data-bs-target="#إضافة_عميل">
+                                    <a class="btn btn-primary my-4 mx-5" aria-current="page" href='javascript:void(0)' data-bs-toggle="tooltip" data-bs-placement="bottom" title="إضافة عميل"><i class="las la-user-plus fs-4"></i></a>
+                                  </li>
+                                  <li class="nav-item" data-bs-toggle="modal" data-bs-target="#تفاصيل_التسجيل">
+                                    <a class="btn btn-primary my-4 mx-5" aria-current="page" href='javascript:void(0)' data-bs-toggle="tooltip" data-bs-placement="bottom" title="تفاصيل التسجيل"><i class="las la-registered fs-4"></i></a>
+                                  </li>
+                                  <li class="nav-item" data-bs-toggle="modal" data-bs-target="#المبيعات">
+                                    <a class="btn btn-primary my-4 mx-5" aria-current="page" href='javascript:void(0)' data-bs-toggle="tooltip" data-bs-placement="bottom" title="المبيعات"><i class="las la-funnel-dollar fs-4"></i></a>
+                                  </li>
+                                  <li class="nav-item" data-bs-toggle="modal" data-bs-target="#الطلبات_المفتوحة">
+                                    <a class="btn btn-primary my-4 mx-5 position-relative" aria-current="page" href='javascript:void(0)' data-bs-toggle="tooltip" data-bs-placement="bottom" title="الطلبات المفتوحة">
+                                      <i class="las la-file fs-4"></i>
+                                      <span class="position-absolute top-0 start-100 fs-7 translate-middle badge bg-danger header-badge rounded-circle">5</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                          
+                            <!-- ROW-1 END -->
+                            </div>
+    
+                            <!--row2-->
+                            <div class="row">
+                              <div class="col-lg-4 col-md-12 col-sm-12 col-xl-4">
+                               <div class="card-body p-0 row">
+                                 <div class="col-12 col-md-12 mt-4">
+                                   <form class="row justify-content-start align-items-center">
+                                     <div class="col-12 text-start mb-4">
+                                      <div class="form-group d-flex justify-content-start ">
+                                        <select class="form-select" style="width: 70%;" id="autoSizingSelect">
+                                          <option selected>اختيار...</option>
+                                          <option value="1">عميل نقدي</option>
+                                          <option value="2">عميل أخر</option>
+                                        </select>
+                                        <button class="btn btn-sm btn-blue mx-2"  data-bs-toggle="modal" data-bs-target="#add2222">أضف عميل</button>
+                                        
+                            <!--اضافة عميل-->
+                            <div class="modal fade" id="add2222" tabindex="-1" role="dialog">
+                              <div class="modal-dialog modal-md" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-header border-0">
+                                        <h5 class="modal-title">إضافة عميل</h5>
+                                          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                  </button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <div class="row card-body text-info">
+                                            <div class="col-12">
+                                              <div class="form-group">
+                                                <label for="exampleInputEmail1">الاسم</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                                              </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                              <div class="form-group">
+                                                <label for="exampleInputEmail1">عنوان البريد الالكتروني</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+                                              </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                              <div class="form-group">
+                                                <label for="exampleInputEmail1">الهاتف</label>
+                                                <input type="tel" class="form-control" id="exampleInputEmail1" placeholder="">
+                                              </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                              <div class="form-group">
+                                                <label for="exampleInputEmail1">تفاصيل أخرى 1</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                                              </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                              <div class="form-group">
+                                                <label for="exampleInputEmail1">تفاصيل أخرى 2</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                                              </div>
+                                            </div>
+                                          </div>                
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button class="btn btn-danger" data-bs-dismiss="modal">إلغاء</button>
+                                          <button class="btn btn-info">أضف عميل</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div> 
+                           <!--اضافة عميل-->
+                                      </div>
+                                     </div>
+                                     <div class="col-12 text-start   mb-4">
+                                       <input type="text" class="form-control" placeholder="ملاحظات مرجعيه">
+                                     </div>
+                                     <div class="col-12 text-start   mb-4">
+                                      <input type="text" class="form-control" placeholder="البحث عن المنتج عن طريق رمز او اسم , يمكنك ايضا مسح الباركود ">
+                                    </div>
+                                   </form>
+                                   <div class="row">
+                                    <div class="col-12">
+                                      <div class="card p-1">
+                                        <div class="card-body sales-list   p-0">
+                                          <div class="selling-points-card-product">
+                                            <div class="d-block"> 
+                                              <a class="btn btn-sm text-danger del-pro fs-6">
+                                                <i class="fa fa-trash-o mt-4"></i>
+                                              </a>
+                                              <p style="text-align:end; font-weight: bold;">3255<br> SR</p>
+                                            </div>
+                                            <div style="display: flex; gap: 10px">
+                                              <div>
+                                                <p class="fw-bold text-info">اسم الصنف</p>
+                                                <div class="align-self-center" style="display: flex; gap: 10px;">
+                                
+                                                  <button id="incButton" class="link-hover text-info add"><i class="fa fa-plus"></i></button>
+                                
+                                                  <div style="width: 20%;">
+                                                    <input type="text" name="quantity" disabled style="height: 30px;" class="form-control p-0 bg-primary text-white text-center qty" id="counter" value="5">
+                                                  </div>
+                                
+                                                  <button id="decButton" class="quantity-right-plus link-hover text-info minus"><i class="fa fa-minus"></i></button>
+                                                </div>
+                                              </div>
+                                              <img src="assets/images/صوره الفاتوره.svg">
+                                            </div>
+                                          </div>
+                                          <div class="selling-points-card-product">
+                                            <div class="d-block"> 
+                                              <a class="btn btn-sm text-danger del-pro fs-6">
+                                                <i class="fa fa-trash-o mt-4"></i>
+                                              </a>
+                                              <p style="text-align:end; font-weight: bold;">3255<br> SR</p>
+                                            </div>
+                                            <div style="display: flex; gap: 10px">
+                                              <div>
+                                                <p class="fw-bold text-info">اسم الصنف</p>
+                                                <div class="align-self-center" style="display: flex; gap: 10px;">
+                                
+                                                  <button id="incButton" class="link-hover text-info add"><i class="fa fa-plus"></i></button>
+                                
+                                                  <div style="width: 20%;">
+                                                    <input type="text" name="quantity" disabled style="height: 30px;" class="form-control p-0 bg-primary text-white text-center qty" id="counter" value="5">
+                                                  </div>
+                                
+                                                  <button id="decButton" class="quantity-right-plus link-hover text-info minus"><i class="fa fa-minus"></i></button>
+                                                </div>
+                                              </div>
+                                              <img src="assets/images/صوره الفاتوره.svg">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                      <div>
+                                        <div class="d-flex justify-content-between  ">
+                                          <p>اجمالي عدد المنتجات</p>
+                                          <p class="productNumbe"></p>
+                                        </div>
+                                        <div class="d-flex justify-content-between  ">
+                                          <p>الخصم </p>
+                                          <p class="discount"></p>
+                                        </div>
+                                        <div class="d-flex justify-content-between  ">
+                                          <p> الاجمالي مع الضرائب</p>
+                                          <p class="productPrice"></p>
+                                        </div>
+                                        <div class="d-inline-flex justify-content-center  my-4">
+                                          <a href='javascript:void(0)' class="btn btn-sm btn-success mx-2" data-bs-toggle="modal" data-bs-target="#pay"> الدفع</a>
+                                          <a href='javascript:void(0)' class="btn btn-sm btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#طباعة_الطلب"> طباعة الطلب</a>
+                                          <a href='javascript:void(0)' class="btn btn-sm btn-info mx-2" data-bs-toggle="modal" data-bs-target="#طباعة_فاتورة"> طباعة الفاتورة</a>
+                                        </div>
+                                        <div class="d-inline-flex justify-content-center ">
+                                          <a href='javascript:void(0)' data-bs-toggle="modal" data-bs-target="#الطلبات_المفتوحة" class="btn btn-sm btn-warning mx-2"> مسودة</a>
+                                          <a href=" " class="btn btn-sm btn-danger mx-2">إلغاء الطلب</a>
+                                        </div>
+    
+                                </div>
+                                    </div>
+                                   </div>
+                                 </div>
+                               </div>
+                              </div>
+                               <div class="col-lg-8 col-md-12 col-sm-12 col-xl-8 ">
+                                 <div class="card border border-1">
+                                   <div class="card-body p-1" style="height: 600px;  overflow: auto;">
+                                    <div class="row" id="products_area">
+                                      <div class="col-6 col-lg-4 py-4">
+                                        <div style="margin-inline:auto;" class="selling-points-product">
+                                          <div class="selling-points-product-name">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-6 col-lg-4 py-4">
+                                        <div style="margin-inline:auto;" class="selling-points-product">
+                                          <div class="selling-points-product-name">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-6 col-lg-4 py-4">
+                                        <div style="margin-inline:auto;" class="selling-points-product">
+                                          <div class="selling-points-product-name">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-6 col-lg-4 py-4">
+                                        <div style="margin-inline:auto;" class="selling-points-product">
+                                          <div class="selling-points-product-name">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-6 col-lg-4 py-4">
+                                        <div style="margin-inline:auto;" class="selling-points-product">
+                                          <div class="selling-points-product-name">
+                                          </div>
+                                        </div>
+                                      </div>
+    
+                                  </div>
+                               </div>
+                        </div>
+
+                        
+                    </div>
+                    <!-- CONTAINER END -->
+                </div>
+            </div>
+            <!--app-content close-->        
+        </div>
+        <div class="modal fade" id="إنهاء_اليومية" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                      <h5 class="modal-title">إنهاء اليومية</h5>
+                      <div class="d-flex">
+                        <button class="btn-close" onclick="print()"><i class="fa fa-print"></i>
+                        </button>
+                        <button class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover text-nowrap mb-0 text-center">
+                          <tbody>
+                            <tr>
+                              <td style="border-bottom: 1px solid #EEE;">
+                                <h4>نقد في اليد:</h4>
+                              </td>
+                              <td style="text-align:right; border-bottom: 1px solid #EEE;">
+                                <h4>
+                                  <span>0.00</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border-bottom: 1px solid #EEE;">
+                                <h4>المبيعات النقدية:</h4>
+                              </td>
+                              <td style="text-align:right; border-bottom: 1px solid #EEE;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border-bottom: 1px solid #EEE;">
+                                <h4> المبيعات بالشيك :</h4>
+                              </td>
+                              <td style="text-align:right;border-bottom: 1px solid #EEE;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border-bottom: 1px solid #EEE;">
+                                <h4>مبيعات بطاقات الهدايا:</h4>
+                              </td>
+                              <td style="text-align:right;border-bottom: 1px solid #EEE;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="border-bottom: 1px solid #EEE;">
+                                <h4>مبيعات بطاقات الائتمان:</h4>
+                              </td>
+                              <td style="text-align:right;border-bottom: 1px solid #EEE;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                            <tr>
+                              <td style="border-bottom: 1px solid #DDD;">
+                                <h4>شريط:</h4>
+                              </td>
+                              <td style="text-align:right;border-bottom: 1px solid #DDD;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                            <tr>
+                              <td style="border-bottom: 1px solid #008d4c;">
+                                <h4>اخرى:</h4>
+                              </td>
+                              <td style="text-align:right;border-bottom: 1px solid #008d4c;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                            <tr>
+                              <td width="300px;" style="font-weight:bold;">
+                                <h4>إجمالي المبيعات:</h4>
+                              </td>
+                              <td width="200px;" style="font-weight:bold;text-align:right;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                            <tr>
+                              <td width="300px;" style="font-weight:bold;">
+                                <h4>المصروفات:</h4>
+                              </td>
+                              <td width="200px;" style="font-weight:bold;text-align:right;">
+                                <h4>
+                                  <span>0.00</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="300px;" style="font-weight:bold;">
+                                <h4><strong>اجمالي الكاش</strong>:</h4>
+                              </td>
+                              <td style="text-align:right;">
+                                <h4>
+                                  <span><strong>0.00</strong></span>
+                                </h4>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row card-body text-info">
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">اجمالي الكاش</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">نقل الفواتير المفتوحة</label>
+                            <select class="form-select">
+                              <option value=" ">حذف الكل</option>
+                              <option value="الحدود الشمالية">اتركها مفتوحة</option>
+                            </select>                                          
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">إجمالي الشيكات</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">إجمالي زلات بطاقة الائتمان</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">ملاحظات</label>
+                            <textarea name="" id="" class="form-control"  rows="4"></textarea>
+                          </div>
+                        </div>
+                      </div>            
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-info">إنهاء اليومية</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+
+<!--اضافة عميل جديد-->
+        <div class="modal fade" id="إضافة_عميل" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title">إضافة عميل جديد</h5>
+                      <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="row card-body text-info">
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">الاسم بالعربي **</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">الاسم بالانجليزي **</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">الرقم الجوال 1 **</label>
+                            <input type="tel" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">رقم الجوال 2</label>
+                            <input type="tel" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">العنوان **</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">المنطقه</label>
+                            <select class="form-select">
+                              <option value="none" selected="" disabled="" hidden="">--اختر--</option>
+                              <option value="الجوف">الجوف</option>
+                              <option value="الحدود الشمالية">الحدود الشمالية</option>
+                              <option value="الخبر">الخبر</option>
+                              <option value="الدمام">الدمام</option>
+                              <option value="القصيم">القصيم</option>
+                              <option value="المدينة المنورة">المدينة المنورة</option>
+                              <option value="تبوك">تبوك</option>
+                              <option value="جنوب الرياض">جنوب الرياض</option>
+                              <option value="حائل">حائل</option>
+                              <option value="شرق الرياض">شرق الرياض</option>
+                              <option value="شمال الرياض">شمال الرياض</option>
+                              <option value="عسير">عسير</option>
+                              <option value="غرب الرياض">غرب الرياض</option>
+                              <option value="مكه المكرمه">مكة المكرمة</option>
+                              <option value="نجران">نجران</option>
+                            </select>                                          
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">البريد الإلكترونى</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">الرقم الضريبي</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">ملاحظات</label>
+                            <textarea name="" id="" class="form-control" rows="2"></textarea>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">رقم السجل التجاري</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label class="text-danger">ملاحظة: يجب إدخال الهوية الوطنية للعميل فقط للفواتير المتعلقة بالخدمات الصحية الخاصة أو التعليم الأهلي
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">نوع المعرف </label>
+                            <select class="form-select">
+                                <option value="none" selected="" disabled="" hidden="">--اختر--</option>
+                                <option value="  الهوية الوطنية"> الهوية الوطنية</option>
+                                <option value="الحدود الشمالية">الحدود الشمالية</option>
+                                <option value=" رقم الإقامة  "> رقم الإقامة </option>
+                                <option value=" جواز السفر "> جواز السفر </option>
+                                <option value=" رقم 700"> رقم 700</option>
+                                <option value=" TIN الرقم الضريبي المميز  "> TIN الرقم الضريبي المميز </option>
+                                <option value="CR السجل التجاري  ">CR السجل التجاري </option>
+                                <option value="ترخيص وزارة الشؤون البلدية والقروية">ترخيص وزارة الشؤون البلدية والقروية </option>
+                                <option value=" ترخيص وزارة الموارد البشرية والتنمية االجتماعية "> ترخيص وزارة الموارد البشرية والتنمية
+                                  االجتماعية </option>
+                              </select>                                          
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">رقم المعرف</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="">
+                          </div>
+                        </div>
+                      </div>                
+                  </div>
+                  <div class="modal-footer">
+                      <button class="btn btn-danger" data-bs-dismiss="modal">إلغاء</button>
+                      <button class="btn btn-info">أضف عميل</button>
+                  </div>
+              </div>
+          </div>
+      </div> 
+
+      
+<!--تفاصيل_التسجيل-->
+        <div class="modal fade" id="تفاصيل_التسجيل" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title">تفاصيل التسجيل</h5>
+                    <div class="d-flex">
+                      <button class="btn-close" onclick="print()"><i class="fa fa-print"></i>
+                      </button>
+                      <button class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                      </button>
+                  </div>
+                  </div>
+                  <div class="modal-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover text-nowrap mb-0 text-center">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <h4>نقد في اليد:</h4>
+                            </td>
+                            <td style="text-align:right;">
+                              <h4>
+                                <span>500.00</span>
+                              </h4>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <h4>المبيعات النقدية:</h4>
+                            </td>
+                            <td style="text-align:right;  ">
+                              <h4>
+                                <span>211.00 (211.00)</span>
+                              </h4>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <h4> المبيعات بالشيك :</h4>
+                            </td>
+                            <td style="text-align:right; ">
+                              <h4>
+                                <span>0.00 (0.00)</span>
+                              </h4>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <h4>مبيعات بطاقات الهدايا:</h4>
+                            </td>
+                            <td style="text-align:right; ">
+                              <h4>
+                                <span>0.00 (0.00)</span>
+                              </h4>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <h4>مبيعات بطاقات الائتمان:</h4>
+                            </td>
+                            <td style="text-align:right; ">
+                              <h4>
+                                <span>0.00 (0.00)</span>
+                              </h4>
+                            </td>
+                          </tr>
+                  
+                          <tr>
+                            <td>
+                              <h4>شريط:</h4>
+                            </td>
+                            <td style="text-align:right ">
+                              <h4>
+                                <span>0.00 (0.00)</span>
+                              </h4>
+                            </td>
+                          </tr>
+                  
+                          <tr>
+                            <td>
+                              <h4>اخرى:</h4>
+                            </td>
+                            <td style="text-align:right ">
+                              <h4>
+                                <span>0.00 (0.00)</span>
+                              </h4>
+                            </td>
+                          </tr>
+                  
+                          <tr>
+                            <td width="300px;" style="font-weight:bold;">
+                              <h4>إجمالي المبيعات:</h4>
+                            </td>
+                            <td width="200px;" style="font-weight:bold;text-align:right;">
+                              <h4>
+                                <span>211.00 (211.00)</span>
+                              </h4>
+                            </td>
+                          </tr>
+                  
+                          <tr>
+                            <td width="300px;" style="font-weight:bold;">
+                              <h4>المصروفات:</h4>
+                            </td>
+                            <td width="200px;" style="font-weight:bold;text-align:right;">
+                              <h4>
+                                <span>0.00</span>
+                              </h4>
+                            </td>
+                          </tr>
+                  
+                          <tr>
+                            <td width="300px;" style="font-weight:bold;">
+                              <h4><strong>اجمالي الكاش</strong>:</h4>
+                            </td>
+                            <td style="text-align:right;">
+                              <h4>
+                                <span><strong>711.00</strong></span>
+                              </h4>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>              
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      
+<!--المبيعات-->
+      <div class="modal fade" id="المبيعات" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title">المبيعات</h5>
+                    <div class="d-flex">
+                      <button class="btn-close" onclick="print()"><i class="fa fa-print"></i>
+                      </button>
+                      <button class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                      </button>
+                  </div>
+                  </div>
+                    <div class="modal-body">
+                      <div class="table-responsive">
+                        <table class="table table-hover text-nowrap mb-0 text-center">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <h4>المبيعات النقدية:</h4>
+                              </td>
+                              <td style="text-align:right;  ">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <h4> المبيعات بالشيك :</h4>
+                              </td>
+                              <td style="text-align:right; ">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <h4>مبيعات بطاقات الائتمان:</h4>
+                              </td>
+                              <td style="text-align:right; ">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <h4>مبيعات بطاقات الهدايا:</h4>
+                              </td>
+                              <td style="text-align:right; ">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                            <tr>
+                              <td>
+                                <h4>شريط:</h4>
+                              </td>
+                              <td style="text-align:right; ">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                            <tr>
+                              <td>
+                                <h4>اخرى:</h4>
+                              </td>
+                              <td style="text-align:right; ">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                            <tr>
+                              <td width="300px;" style="font-weight:bold;">
+                                <h4>إجمالي المبيعات:</h4>
+                              </td>
+                              <td width="200px;" style="font-weight:bold;text-align:right;">
+                                <h4>
+                                  <span>0.00 (0.00)</span>
+                                </h4>
+                              </td>
+                            </tr>
+                    
+                          </tbody>
+                        </table>
+                    </div>              
+                    </div>
+                </div>
+            </div>
+      </div>                        
+        
+<!--الطلبات المفتوحة-->
+          <div class="modal fade" id="الطلبات_المفتوحة" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title">الطلبات المفتوحة</h5>
+                    <div class="d-flex">
+                      <button class="btn-close" onclick="print()"><i class="fa fa-print"></i>
+                      </button>
+                      <button class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                      </button>
+                  </div>
+                  </div>
+                    <div class="modal-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered border text-nowrap mb-0 text-center">
+                          <thead>
+                              <tr>
+                                  <th class="text-info fs-6 fw-bold">رقم</th>
+                                  <th class="text-info fs-6 fw-bold">التاريخ	</th>
+                                  <th class="text-info fs-6 fw-bold">اسم المنتج	</th>
+                                  <th class="text-info fs-6 fw-bold">الصنف</th>
+                                  <th class="text-info fs-6 fw-bold">اجمالي عدد المنتجات</th>
+                                  <th class="text-info fs-6 fw-bold">الخصم</th>
+                                  <th class="text-info fs-6 fw-bold">الاجمالي مع الضرائب</th>
+                                  <th class="text-info fs-6 fw-bold">المزيد</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>01</td>
+                                  <th>11 August 2022	</th>
+                                  <th>اسم المنتج هنا	</th>
+                                  <th>اسم الصنف هنا	</th>
+                                  <th>00</th>
+                                  <th>00</th>
+                                  <th>0.00 SR	</th>
+                                  <td>
+                                    <div>
+                                      <a href="نقاط البيع.html" class="btn btn-sm btn-success">
+                                        <span class="fa fa-pencil-square-o"> </span>
+                                      </a>
+                                      <a id="" type="button" class="btn btn-sm btn-danger">
+                                        <span class="fa fa-trash-o"> </span>
+                                      </a>
+                                    </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td>01</td>
+                                <th>11 August 2022	</th>
+                                <th>اسم المنتج هنا	</th>
+                                <th>اسم الصنف هنا	</th>
+                                <th>00</th>
+                                <th>00</th>
+                                <th>0.00 SR	</th>
+                                <td>
+                                  <div>
+                                    <a href="نقاط البيع.html" class="btn btn-sm btn-success">
+                                      <span class="fa fa-pencil-square-o"> </span>
+                                    </a>
+                                    <a id="" type="button" class="btn btn-sm btn-danger">
+                                      <span class="fa fa-trash-o"> </span>
+                                    </a>
+                                  </div>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td>01</td>
+                              <th>11 August 2022	</th>
+                              <th>اسم المنتج هنا	</th>
+                              <th>اسم الصنف هنا	</th>
+                              <th>00</th>
+                              <th>00</th>
+                              <th>0.00 SR	</th>
+                              <td>
+                                <div>
+                                  <a href="نقاط البيع.html" class="btn btn-sm btn-success">
+                                    <span class="fa fa-pencil-square-o"> </span>
+                                  </a>
+                                  <a id="" type="button" class="btn btn-sm btn-danger">
+                                    <span class="fa fa-trash-o"> </span>
+                                  </a>
+                                </div>
+                              </td>
+                          </tr>
+                          </tbody>
+                      </table>    
+                      </div>        
+                    </div>
+                </div>
+            </div>
+        </div>  
+        
+        
+<!--الدفع-->
+            <div class="modal fade" id="pay" tabindex="-1" role="dialog">
+              <div class="modal-dialog modal-md" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header border-0">
+                      <h5 class="modal-title">الدفع</h5>
+                      <div class="d-flex">
+                        <button class="btn-close" onclick="print()"><i class="fa fa-print"></i>
+                        </button>
+                        <button class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    </div>
+                      <div class="modal-body">
+                        <div class="table-responsive">
+                          <table class="table table-bordered border text-nowrap" style="margin-bottom: 0;">
+                            <tbody>
+                                <tr>
+                                    <td width="25%" >اجمالي العناصر</td>
+                                    <td width="25%" class="text-right"><span id="item_count">1 (1)</span></td>
+                                    <td width="25%" >إجمالي المبلغ المستحق الدفع</td>
+                                    <td width="25%" class="text-right"><span id="twt">8.00 (0.00)</span></td>
+                                </tr>
+                                <tr>
+                                    <td >اجمالي المدفوع</td>
+                                    <td class="text-right"><span id="total_paying">8.00</span></td>
+                                    <td >الرصيد</td>
+                                    <td class="text-right"><span id="balance">0.00</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="form-group mt-4">
+                                <label for="note">ملاحظة</label>                                    
+                                <textarea name="note" id="note" class="pa form-control kb-text"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <div class="form-group">
+                                <label for="amount">المبلغ</label>                                    
+                                <input name="amount" type="text" id="amount" class="pa form-control kb-pad amount">
+                            </div>
+                          </div>
+                          <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="form-label">طريقة الدفع </label>
+                                <select class="form-select" id="pay_select">
+                                  <option value="cash">نقداً</option>
+                                  <option value="CC">بطاقة إتمانية</option>
+                                  <option value="cheque">شيك</option>
+                                  <option value="gift_card">بطاقة هدية</option>
+                                  <option value="stripe">شريط</option>                                        
+                                  <option value="other">شبكة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12" id="CC">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="form-group">
+                                <input type="text" id="swipe" class="form-control swipe swipe_input" placeholder="انتقد بطاقة هنا ثم كتابة رمز الأمان يدويا">
+                              </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <div class="form-group">
+                                <input type="text" id="pcc_no" class="form-control kb-pad" placeholder="رقم بطاقة الائتمان">                                            
+                              </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <div class="form-group">
+                                <input type="text" id="pcc_holder" class="form-control kb-text" placeholder="اسم الحامل">
+                              </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                              <div class="form-group">
+                                <select class="form-select">
+                                  <option value="Visa">فيزا</option>
+                                  <option value="MasterCard">ماستر كارت</option>
+                                  <option value="Amex">أميكس</option>
+                                  <option value="Discover">اكتشف</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-2 col-md-2">
+                              <div class="form-group">
+                                <input type="text" id="pcc_month" class="form-control kb-pad" placeholder="شهر">
+                              </div>
+                            </div>
+                            <div class="col-2 col-md-2">
+                              <div class="form-group">
+                                <input type="text" id="pcc_year" class="form-control kb-pad" placeholder="السنة">
+                              </div>
+                            </div>
+                            <div class="col-2 col-md-2">
+                              <div class="form-group">
+                                <input type="text" id="pcc_cvv2" class="form-control kb-pad" placeholder="CVV2">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12" id="cheque">
+                          <div class="form-group">
+                            <label for="amount">رقم الشيك</label>                                    
+                            <input type="text" id="cheque_no" class="form-control cheque_no kb-text">                                       
+                          </div>
+                        </div>
+                        <div class="col-12" id="gift_card">
+                          <div class="form-group">
+                            <label for="amount">رقم بطاقة هدية</label>                                    
+                            <input type="text" id="gift_card_no" class="pa form-control kb-pad gift_card_no gift_card_input">                                     
+                           </div>
+                        </div>
+                        <div class="col-12" id="stripe">
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="form-group">
+                                <input type="text" id="swipe" class="form-control swipe swipe_input" placeholder="انتقد بطاقة هنا ثم كتابة رمز الأمان يدويا">
+                              </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <div class="form-group">
+                                <input type="text" id="pcc_no" class="form-control kb-pad" placeholder="رقم بطاقة الائتمان">                                            
+                              </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                              <div class="form-group">
+                                <input type="text" id="pcc_holder" class="form-control kb-text" placeholder="اسم الحامل">
+                              </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                              <div class="form-group">
+                                <select class="form-select">
+                                  <option value="Visa">فيزا</option>
+                                  <option value="MasterCard">ماستر كارت</option>
+                                  <option value="Amex">أميكس</option>
+                                  <option value="Discover">اكتشف</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-2 col-md-2">
+                              <div class="form-group">
+                                <input type="text" id="pcc_month" class="form-control kb-pad" placeholder="شهر">
+                              </div>
+                            </div>
+                            <div class="col-2 col-md-2">
+                              <div class="form-group">
+                                <input type="text" id="pcc_year" class="form-control kb-pad" placeholder="السنة">
+                              </div>
+                            </div>
+                            <div class="col-2 col-md-2">
+                              <div class="form-group">
+                                <input type="text" id="pcc_cvv2" class="form-control kb-pad" placeholder="CVV2">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="col-12">
+                            <div class="form-group">
+                                <label for="amount">ملاحظات الدفع</label>                                    
+                                <input name="amount" type="text" id="amount" class="pa form-control kb-pad amount">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                      <div class="modal-footer">
+                          <button class="btn btn-danger" data-bs-dismiss="modal">إلغاء</button>
+                          <button class="btn btn-info">الدفع</button>
+                      </div>
+                  </div>
+              </div>
+              </div> 
+              
+<!--طباعة الطلب-->
+              <div class="modal fade" id="طباعة_الطلب" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header hidden-print border-0">
+                        <h5 class="modal-title">طباعة طلبية</h5>
+                        <div class="d-flex">
+                          <button class="btn-close" onclick="print()"><i class="fa fa-print"></i>
+                          </button>
+                          <button class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+                      </div>
+                      <div class="modal-body text-start">
+                        <h6 class="modal-title fs-5 fw-bold text-info lh-lg">اسم المتجر</h6>
+                        <h6 class="modal-title fs-6 fw-bold text-primary lh-lg">طلبية</h6>
+                        <div class="table-responsive border border-1 rounded-1">
+                          <table class="table fs-6">
+                              <tbody>
+                                  <tr><td>C: <span>عميل نقدي</span></td></tr>
+                                  <tr><td>R: <span>AAAA</span></td></tr>
+                                  <tr><td>U: <span>Fahad2233</span></td></tr>
+                                  <tr><td> <span id="date"><script>
+                                    const d = new Date().toJSON();
+                                    document.getElementById("date").innerHTML = d;
+                                    </script></span></td></tr>
+                                  <tr><td><span>#1</span> <span class="productNumber">اسم المنتج</span> {<span class="productNo">8565985855845</span>} <span>[1]</span> </td></tr>
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                        <div class="modal-footer hidden-print">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">إلغاء</button>
+                            <button class="btn btn-info"  onclick="print()">طباعة</button>
+                        </div>
+                    </div>
+                </div>
+                </div> 
+
+
+<!--طباعة فاتورة-->
+              <div class="modal fade" id="طباعة_فاتورة" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header hidden-print border-0">
+                        <h5 class="modal-title">طباعة فاتورة</h5>
+                        <div class="d-flex">
+                          <button class="btn-close" onclick="print()"><i class="fa fa-print"></i>
+                          </button>
+                          <button class="btn-close fs-4" data-bs-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+                      </div>
+                      <div class="modal-body text-start">
+                        <h6 class="modal-title fs-5 fw-bold text-info lh-lg">اسم المتجر</h6>
+                        <h6 class="modal-title fs-6 fw-bold text-primary lh-lg">فاتورة</h6>
+                        <div class="table-responsive border border-1 rounded-1">
+                          <table class="table fs-6">
+                              <tbody>
+                                  <tr><td>C: <span>عميل نقدي</span></td></tr>
+                                  <tr><td>R: <span>AAAA</span></td></tr>
+                                  <tr><td>U: <span>Fahad2233</span></td></tr>
+                                  <tr><td> <span id="date1"><script>
+                                    const d1 = new Date().toJSON();
+                                    document.getElementById("date1").innerHTML = d1;
+                                    </script></span></td></tr>
+                                  <tr><td><span>#1</span> <span class="productNumber">اسم المنتج</span> {<span class="productNo">8565985855845</span>} <span>[1]</span> </td></tr>
+                              </tbody>
+                          </table>
+                          <table class="table fs-6">
+                            <tbody>
+                                <tr>
+                                  <td><span>إجمالي العناصر</span></td>
+                                  <td>[<span>1</span>]</td>
+                                </tr>
+                                <tr>
+                                  <td><span>الإجمالي</span></td>
+                                  <td><span>1</span></td>
+                                </tr>
+                                <tr>
+                                  <td><span>المبلغ الإجمالي	</span></td>
+                                  <td><span>00.00</span></td>
+                                </tr>
+                                <tr>
+                                  <td><span>التقريب</span></td>
+                                  <td><span>1</span></td>
+                                </tr>
+                                <tr>
+                                  <td><span>إجمالي المبلغ المستحق الدفع	</span></td>
+                                  <td><span>1</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                      </div>
+                        <div class="modal-footer hidden-print">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">إلغاء</button>
+                            <button class="btn btn-info"  onclick="print()">طباعة</button>
+                        </div>
+                    </div>
+                </div>
+                </div> 
+
+        <!-- FOOTER -->
+        <footer class='footer'>
+            <div class='container'>
+                <div class='row align-items-center flex-row-reverse'>
+                    <div class='col-md-12 col-sm-12 text-center'>
+                        <h6 class='text-primary'>جميع الحقوق محفوظة <a class='text-blue link-hover' href='javascript:void(0)'>الإبداع التقني</a></h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER END -->
+
+    </div>
+    <!-- /page -->
+
+    <!--Models-->
+    
+    <div class="modal fade" id="profilemodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content rounded-4">
+                <div class="modal-header">
+                    <h5 class="modal-title text-blue"><i class="bi bi-person-vcard-fill text-primary"></i> تعديل بيانات حسابي</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body text-primary">
+                        <div class="form-group">
+                            <label for="formFile" class="form-label mt-0">تحديث صورة الملف الشخصي</label>
+                            <input class="form-control" type="file">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">الاسم الأول</label>
+                                    <input type="text" class="form-control" id="exampleInputname" placeholder="فهد">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname1">الاسم الأخير</label>
+                                    <input type="text" class="form-control" id="exampleInputname1" placeholder="الحربي">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="demo@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputnumber">رقم الهاتف</label>
+                            <input type="tel" class="form-control" id="exampleInputnumber" placeholder="">
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary link-hover" data-bs-dismiss="modal">إلغاء</button>
+                    <button class="btn btn-blue link-hover">حفظ الاعدادت</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="passmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content rounded-4">
+                <div class="modal-header">
+                    <h5 class="modal-title text-blue"><i class="bi bi-person-fill-lock text-primary"></i> تغيير كلمة المرور</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body text-primary">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">كلمة المرور القديمة</label>
+                                    <input type="password" class="form-control" id="exampleInputname" placeholder="">
+                                    <div class='text-end mt-1'><a  class="text-danger" href="javascript:void(0)">نسيت كلمة المرور؟</a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname">كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" id="exampleInputname" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputname1">تأكيد كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" id="exampleInputname1" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary link-hover" data-bs-dismiss="modal">إلغاء</button>
+                    <button class="btn btn-blue link-hover">حفظ الاعدادت</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <script src='assets/js/appMain.js'></script>
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script>
+        //
+$(document).ready(function () {
+    //وسيلة الدفع
+    $('#CC').hide();
+    $('#cheque').hide();
+    $('#gift_card').hide();
+    $('#stripe').hide();
+
+    $('#pay_select').change(function() {
+        if ($(this).val() === 'cash') {
+            $('#CC').hide();
+            $('#cheque').hide();
+            $('#gift_card').hide();
+            $('#stripe').hide();
+        };
+    });
+    $('#pay_select').change(function() {
+        if ($(this).val() === 'CC') {
+            $('#CC').show();
+            $('#cheque').hide();
+            $('#gift_card').hide();
+            $('#stripe').hide();
+        };
+    });
+    $('#pay_select').change(function() {
+        if ($(this).val() === 'cheque') {
+            $('#CC').hide();
+            $('#cheque').show();
+            $('#gift_card').hide();
+            $('#stripe').hide();
+        };
+    });
+    $('#pay_select').change(function() {
+        if ($(this).val() === 'gift_card') {
+            $('#CC').hide();
+            $('#cheque').hide();
+            $('#gift_card').show();
+            $('#stripe').hide();
+        };
+    });
+    $('#pay_select').change(function() {
+        if ($(this).val() === 'stripe') {
+            $('#CC').hide();
+            $('#cheque').hide();
+            $('#gift_card').hide();
+            $('#stripe').show();
+        };
+    });
+    $('#pay_select').change(function() {
+        if ($(this).val() === 'other') {
+            $('#CC').hide();
+            $('#cheque').hide();
+            $('#gift_card').hide();
+            $('#stripe').hide();
+        };
+    });
+
+
+
+    var productName = 'اسم المنتج';
+    var productImg = 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg';
+    var productPrice = 15;
+    var productNumber = 0;
+    var taxes = 0;
+    var discount = 10.0;
+    var productNo = 152215265;
+    //عرض المنتجات
+    $('.selling-points-product').append(function () {
+      $(this) .css({"background-image": "url(" + productImg + ")"});
+      $(this) .append('<div class="selling-points-product-name"><p class="mt-3">'+ productName +'</p></div>')
+    });
+    $('.discount') .append(function() {
+        $(this) .prepend(discount);
+    });
+    // اضافة أو حذف منتج
+
+    $(".selling-points-product") .click (function () {
+            $(".sales-list").append('<div class="selling-points-card-product"><div class="d-block"> <a class="btn btn-sm text-danger fs-6 del-pro"><i class="fa fa-trash-o mt-4"></i></a><p style="text-align:end; font-weight: bold;" class="productPrice12" >'+ productPrice +'<br> SR</p></div><div style="display: flex; gap: 10px"><div><p class="fw-bold text-info">'+ productName +'</p><div class="align-self-center" style="display: flex; gap: 10px;"><button id="incButton" class="link-hover text-info add"><i class="fa fa-plus"></i></button><div style="width: 20%;"><input type="text" name="quantity" disabled style="height: 30px;" class="form-control p-0 bg-primary text-white text-center qty" id="counter" value="1"></div><button id="decButton" class="quantity-right-plus link-hover text-info minus"><i class="fa fa-minus"></i></button></div></div><img src="assets/images/صوره الفاتوره.svg"></div></div>');
+            var productPrice1 = productPrice* ++productNumber;
+            $('.productNumbe').replaceWith('<p class="productNumbe">'+ productNumber +'</p>');
+            $('.productPrice').replaceWith('<p class="productPrice">'+ productPrice1 +'</p>');
+ /*
+        } else {
+           
+            +productNumber
+            var productPrice1 = productPrice * productNumber;
+            $('.productNumbe').replaceWith('<p class="productNumbe">'+ productNumber +'</p>');
+            $('.productPrice').replaceWith('<p class="productPrice">'+ productPrice1 +'</p>');
+            $('.qty') .replaceWith('<input type="text" name="quantity" disabled style="height: 30px;" class="form-control p-0 bg-primary text-white text-center qty" id="counter" value="'+ productNumber +'">');
+ */
+  
+
+     //   add & minus icon
+        $ ('.del-pro') .click(function() {
+            $(this).parents('.selling-points-card-product') .remove();
+            var productPrice2 = productPrice1 - productPrice;
+            $('.productPrice').replaceWith('<p class="productPrice">'+ productPrice2 +'</p>');
+
+        }) ;
+
+        $('.add').on('click', function () {
+            var $qty = $(this).closest('div').find('.qty');
+            var currentVal = parseInt($qty.val());
+            if (!isNaN(currentVal)) {
+                $qty.val(currentVal + 1);
+            }
+        });
+        $('.minus').on('click', function () {
+            var $qty = $(this).closest('div').find('.qty');
+            var currentVal = parseInt($qty.val());
+            if (!isNaN(currentVal) && currentVal > 1) {
+                $qty.val(currentVal - 1);
+            }
+        });
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+   $(".selling-points-product") .dblclick (function () {
+    if (productNumber < 1) {
+      productNumber = 1+ productNumber;
+      $(".sales-list").append('<div class="selling-points-card-product"><div class="d-block"> <a class="btn btn-sm text-danger fs-6" id="del-pro"><i class="fa fa-trash-o mt-4"></i></a><p style="text-align:end; font-weight: bold;">'+ productPrice +'<br> SR</p></div><div style="display: flex; gap: 10px"><div><p class="fw-bold text-info">'+ productName +'</p><div class="align-self-center" style="display: flex; gap: 10px;"><button id="incButton" class="link-hover text-info add"><i class="fa fa-plus"></i></button><div style="width: 20%;"><input type="text" name="quantity" disabled style="height: 30px;" class="form-control p-0 bg-primary text-white text-center qty" id="counter" value="'+ productNumber +'"></div><button id="decButton" class="quantity-right-plus link-hover text-info minus"><i class="fa fa-minus"></i></button></div></div><img src="assets/images/صوره الفاتوره.svg"></div></div>');
+          $('.productNumbe') .append('<span class="productNumbe1">' + productNumber +'</span>');
+          $('.productPrice') .append(productPrice);
+  }
+   else {
+    productNumber = 1 + productNumber
+    $('.productNumbe') .replace('<span class="productNumbe1">' + productNumber +'</span>');
+  }
+    });
+
+    $(".sales-list").append('<div class="selling-points-card-product"><div class="d-block"> <a class="btn btn-sm text-danger fs-6" id="del-pro"><i class="fa fa-trash-o mt-4"></i></a><p style="text-align:end; font-weight: bold;">'+ productPrice +'<br> SR</p></div><div style="display: flex; gap: 10px"><div><p class="fw-bold text-info">'+ productName +'</p><div class="align-self-center" style="display: flex; gap: 10px;"><button id="incButton" class="link-hover text-info add"><i class="fa fa-plus"></i></button><div style="width: 20%;"><input type="text" name="quantity" disabled style="height: 30px;" class="form-control p-0 bg-primary text-white text-center qty" id="counter" value="'+ productNumber +'"></div><button id="decButton" class="quantity-right-plus link-hover text-info minus"><i class="fa fa-minus"></i></button></div></div><img src="assets/images/صوره الفاتوره.svg"></div></div>');
+/*
+    $(document).ready(function () {
+        $ ('.del-pro') .click(function() {
+            $(this).parents('.selling-points-card-product') .remove();
+        }) 
+    });
+
+  });
+
+
+
+  $ ('.del-pro') .click(function() {
+    $(this).parents('.selling-points-card-product') .remove();*/
+}) 
+    </script>
+</body>
+</html>
