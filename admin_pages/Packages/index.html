@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang='ar'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>برنامج عربة للمحاسبة وإدارة المبيعات</title>
+    <base href="../../">
+    <link rel='shortcut icon' href='assets/images/favicon.png' type='image/x-icon'>
+    <link rel='stylesheet' href='assets/plugins/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <link rel='stylesheet' href='assets/css/style-main.css'>
+    <link rel='stylesheet' href='assets/font/icon.css'>
+    <link rel='stylesheet' href='assets/font/@fontsource/tajawal/index.css'>
+</head>
+
+<body class="app sidebar-mini rtl light-mode">
+
+    <!-- GLOBAL-LOADER -->
+    <div id="global-loader">
+        <img src="assets/images/logo.svg" class="loader-img" alt="Loader">
+    </div>
+    <!-- /GLOBAL-LOADER -->
+
+    <!-- PAGE -->
+    <div class="page">
+        <div class="page-main">
+
+            <!-- app-Header -->
+            <div class="app-header header sticky">
+                <div class="container-fluid main-container">
+                    <div class="d-flex">
+                        <a aria-label='Hide Sidebar' class='app-sidebar__toggle text-white link-hover mt-3'
+                            data-bs-toggle='sidebar' href='javascript:void(0)'></a>
+                        <!-- sidebar-toggle-->
+                        <a class="logo-horizontal " href="index.html">
+                            <img src="assets/images/logo-white.svg" class="header-brand-img light-logo1"
+                                style='height: 50px !important;' alt="logo">
+                        </a>
+                        <!-- LOGO -->
+                        <div class="main-header-center ms-3 d-none d-lg-block">
+                            <input type='text' class='form-control' id='typehead' placeholder='كلمة البحث هنا'>
+                            <button class='btn px-0 pt-2'><i class='bi bi-search'></i></button>
+                        </div>
+                        <div class="d-flex order-lg-2 ms-auto header-right-icons">
+                            <!-- SEARCH -->
+                            <div class='dropdown d-flex profile-1 me-2'>
+                                <a href='javascript:void(0)' data-bs-toggle='dropdown'
+                                    class='nav-link  leading-none d-flex'>
+                                    <span class='avatar brround cover-image mx-4'
+                                        data-bs-image-src='assets/images/unkown-user-img.svg'
+                                        style='background: url(assets/images/unkown-user-img.svg) center center; border: 0.2rem solid var(--bs-white)'>
+                                        <span class='avatar-status bg-green'></span> </span>
+                                    <div class='d-none d-sm-block'>
+                                        <h5 class='text-white me-2 mb-0 fs-6'> فهد الحربي </h5>
+                                        <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>
+                                    </div>
+                                    <i class='bi bi-chevron-down fs-6 text-primary'></i>
+                                </a>
+                                <div
+                                    class='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile_dropdown rounded-4'>
+                                    <div class='drop-heading'>
+                                        <div class='text-center'>
+                                            <h5 class='text-blue mb-0 fs-14 fw-semibold'>فهد الحربي</h5>
+                                            <h5 class='text-primary mb-0 fs-13 fw-semibold'>المشرف</h5>
+                                        </div>
+                                    </div>
+                                    <div class='dropdown-divider m-0'></div>
+                                    <a class='dropdown-item' href='#' data-bs-toggle='modal'
+                                        data-bs-target='#profilemodal'>
+                                        <i class='dropdown-icon fs-4 las la-user-cog text-blue'></i> تعديل حسابي
+                                    </a>
+                                    <a class='dropdown-item' href='#' data-bs-toggle='modal'
+                                        data-bs-target='#passmodal'>
+                                        <i class='dropdown-icon fs-4 bi bi-file-lock text-blue'></i> تغيير كلمة المرور
+                                    </a>
+                                    <a class='dropdown-item' href='login.html'>
+                                        <i class='dropdown-icon fs-4 las la-sign-out-alt text-blue'></i> تسجيل الخروج
+                                    </a>
+                                </div>
+                            </div>
+                            <button class='navbar-toggler navresponsive-toggler text-white d-lg-none ms-auto'
+                                type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent-4'
+                                aria-controls='navbarSupportedContent-4' aria-expanded='false'
+                                aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon bi bi-three-dots-vertical text-white'></span>
+                            </button>
+                            <div class='navbar navbar-collapse responsive-navbar p-0'>
+                                <div class='collapse navbar-collapse bg-blue' id='navbarSupportedContent-4'>
+                                    <div class='d-flex order-lg-2'>
+                                        <div class='dropdown d-lg-none d-flex'>
+                                            <a href='javascript:void(0)' class='nav-link icon'
+                                                data-bs-toggle='dropdown'>
+                                                <i class='bi bi-search'></i>
+                                            </a>
+                                            <div class='dropdown-menu header-search dropdown-menu-start'>
+                                                <div class='input-group w-100 p-2'>
+                                                    <input type='text' class='form-control'
+                                                        style='border-radius: 50px !important;' placeholder='البحث....'>
+                                                    <div class='input-group-text btn btn-primary ms-2'>
+                                                        <i class='bi bi-search'></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- SETTING -->
+                                        <div class='d-flex'>
+                                            <a class='nav-link icon' href='admin_pages/settings/index.html'
+                                                data-bs-placement='bottom' data-bs-toggle='tooltip'
+                                                data-bs-custom-class='custom-tooltip' title=''
+                                                data-bs-original-title='الإعدادت'>
+                                                <i class='bi bi-gear-fill fs-4'></i>
+                                            </a>
+                                        </div>
+                                        <!-- /SETTING -->
+
+                                        <!-- NOTIFICATIONS -->
+                                        <div class='dropdown  d-flex notifications'>
+                                            <a class='nav-link icon' data-bs-toggle='dropdown'>
+                                                <i class='bi bi-bell-fill fs-4'></i><span
+                                                    class='spinner-grow text-danger position-absolute top-0 translate-middle'
+                                                    style='left: 70%; width: 10px; height: 10px;' role='status'>
+                                                    <span class='visually-hidden'>3</span>
+                                                </span>
+                                            </a>
+                                            <div
+                                                class='dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow-sm rounded-4'>
+                                                <div class='drop-heading border-bottom'>
+                                                    <div class='d-flex'>
+                                                        <h6 class='mt-1 mb-0 fs-16 fw-semibold text-blue'>الإشعارات
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <div class='notifications-menu notifications-menu-scroll'
+                                                    style='overflow: scroll;'>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر
+                                                                هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر
+                                                                هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر
+                                                                هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر
+                                                                هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class='dropdown-item d-flex' href='notify-list.html'>
+                                                        <div class='me-3 notifyimg  bg-blue brround box-shadow-blue'>
+                                                            <i class='bi bi-check-circle fs-4'></i>
+                                                        </div>
+                                                        <div class='mt-1 wd-80p'>
+                                                            <h5 class='notification-label text-blue mb-1'>نص مختصر
+                                                                هنا...</h5>
+                                                            <span class='notification-subtext'>قبل 30 دقيقة</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class='dropdown-divider m-0'></div>
+                                                <a href='notify-list.html'
+                                                    class='dropdown-item text-center p-3 text-blue'>مشاهدة جميع
+                                                    الاشعارات</a>
+                                            </div>
+                                        </div>
+                                        <!-- /NOTIFICATIONS -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /app-Header -->
+
+            <!--APP-SIDEBAR-->
+            <div class="sticky">
+                <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+                <div class="app-sidebar">
+                    <div class="side-header">
+                        <a class='header-brand1' href='#'>
+                            <img src='assets/images/logo.svg' class='header-brand-img light-logo'
+                                style='height: 70px; width: 70px; border-radius: 50%;' alt='logo'>
+                            <img src='assets/images/logo.svg' class='header-brand-img mt-1 light-logo1'
+                                style='height: 70px; width: 70px; border-radius: 50%;' alt='logo'>
+                        </a>
+                        <!-- LOGO -->
+                    </div>
+                    <div class="main-sidemenu">
+                        <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg"
+                                fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
+                            </svg></div>
+                        <ul class="side-menu" id="side-menu-ul">
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin_pages/hamePage/index.html">
+                                    <i class="side-menu__icon bi bi-house-fill"></i>
+                                    <span class="side-menu__label">الرئيسية</span>
+
+                                </a>
+
+                            </li>
+
+
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon bi bi-person-check-fill"></i>
+                                    <span class="side-menu__label">الاشتراكات</span>
+                                    <i class="angle fs-6 fw-bold bi bi-chevron-left"></i>
+                                </a>
+                                <ul class="slide-menu">
+                                    <li class="side-menu-label1"><a href="javascript:void(0)">الاشتراكات</a></li>
+                                    <li><a href="admin_pages/accounts/list.html" class="slide-item">قائمة الاشتركات</a></li>
+                                    <li><a href="admin_pages/accounts/add.html" class="slide-item">إضافة اشتراك</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin_pages/powers/index.html">
+                                    <i class="side-menu__icon bi bi-list-check"></i>
+                                    <span class="side-menu__label">الصلاحيات</span>
+
+                                </a>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin_pages/payment/index.html">
+                                    <i class="side-menu__icon bi bi-credit-card-fill"></i>
+                                    <span class="side-menu__label">الدفع</span>
+
+                                </a>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon bi bi-file-earmark-fill"></i>
+                                    <span class="side-menu__label">العقود</span>
+                                    <i class="angle fs-6 fw-bold bi bi-chevron-left"></i>
+                                </a>
+                                <ul class="slide-menu">
+                                    <li class="side-menu-label1"><a href="javascript:void(0)">العقود</a></li>
+                                    <li><a href="admin_pages/contracts/list.html" class="slide-item">قائمة العقود</a></li>
+                                    <li><a href="admin_pages/contracts/add.html" class="slide-item">إضافة عقد</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin_pages/accounts/add.html">
+                                    <i class="side-menu__icon bi bi-person-fill-add"></i>
+                                    <span class="side-menu__label">إنشاء الحسابات</span>
+
+                                </a>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon bi bi-person-check-fill"></i>
+                                    <span class="side-menu__label">الموظفين</span>
+                                    <i class="angle fs-6 fw-bold bi bi-chevron-left"></i>
+                                </a>
+                                <ul class="slide-menu">
+                                    <li class="side-menu-label1"><a href="javascript:void(0)">الموظفين</a></li>
+                                    <li><a href="admin_pages/HR/list.html" class="slide-item">قائمة الموظفين</a></li>
+                                    <li><a href="admin_pages/HR/add.html" class="slide-item">إضافة موظف</a></li>
+                                </ul>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin_pages/support/index.html">
+                                    <i class="side-menu__icon bi bi-info-circle-fill"></i>
+                                    <span class="side-menu__label">الدعم الفني</span>
+
+                                </a>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin_pages/settings/index.html">
+                                    <i class="side-menu__icon bi bi-gear-fill"></i>
+                                    <span class="side-menu__label">الإعدادات</span>
+
+                                </a>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin_pages/Packages/index.html">
+                                    <i class="side-menu__icon bi bi-card-checklist"></i>
+                                    <span class="side-menu__label">الباقات</span>
+
+                                </a>
+
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="logout.html">
+                                    <i class="side-menu__icon bi bi-box-arrow-left"></i>
+                                    <span class="side-menu__label">تسجيل الخروج</span>
+
+                                </a>
+
+                            </li>
+                        </ul>
+                        <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
+                            </svg></div>
+                    </div>
+                </div>
+                <!--/APP-SIDEBAR-->
+            </div>
+
+
+            <!--app-content open-->
+            <div class='main-content app-content' style='margin-top: 75px;'>
+                <div class='side-app'>
+
+                    <!-- CONTAINER -->
+                    <div class='main-container container-fluid'>
+                        <div class='page-header d-block'>
+                            <div>
+                                <ol class="breadcrumb1 d-block d-sm-flex border border-blue border-opacity-10 rounded-2 shadow-sm justify-content-between align-items-center pt-5" style='background: var(--bs-secondary);'>
+                                    <h2 class='page-title'><i class='bi bi-cart3 bg-blue text-primary rounded-circle px-2 py-1 my-2'></i> برنامج عربة <span class='text-muted fs-6 mx-1'>للمحاسبة وإدارة المبيعات</span></h2>
+                                    <div class='d-block d-sm-flex justify-content-end my-2'>
+                                        <li class="breadcrumb-item"><i class="bi bi-house-heart-fill me-2 text-blue" aria-hidden="true"></i><a class="text-blue" href="javascript:void(0)">الرئيسية</a></li>
+                                        <li class="breadcrumb-item link-hover"><i class="las la-chevron-left mx-2 text-blue" aria-hidden="true"></i><a class="text-primary" href="javascript:void(0)">القسم هنا</a></li>
+                                        <li class="breadcrumb-item active mt-1"><i class="las la-chevron-left mx-2 text-blue" aria-hidden="true"></i>إضافة</li>
+                                    </div>
+                                    <div class='text-end'>
+                                        <span class='text-muted' id='date_time'></span>
+                                    </div>
+                                </ol>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                <div class="card">
+                                    <div class="card-header border-0 d-block">
+                                        <h2 class='page-title mb-5'><i class='bi bi-caret-left-fill text-primary'></i>نص هنا</h2>
+                                        <div class="card-title text-blue">
+                                            <span class='text-danger fs-4'>*</span>يرجى استخدام الجدول أدناه للتنقل أو تصفية النتائج.
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-nowrap border-bottom" id="file-datatable">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                        <th class="wd-15p border-bottom-0">نص هنا</th>
+                                                    </tr>                                             
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>
+                                                            <div class="btn-list">
+                                                                <button type="button" class="btn btn-icon link-hover btn-success" style='border-radius: 6px !important;' data-bs-placement="right" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="تعديل"><i class="las la-edit fs-6"></i></button>
+                                                                <button type="button" class="btn btn-icon link-hover btn-danger" style='border-radius: 6px !important;' data-bs-placement="right" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="حذف"><i class="las la-trash-alt fs-6"></i></button>
+                                                            </div> 
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>
+                                                            <div class="btn-list">
+                                                                <button type="button" class="btn btn-icon link-hover btn-success" style='border-radius: 6px !important;' data-bs-placement="right" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="تعديل"><i class="las la-edit fs-6"></i></button>
+                                                                <button type="button" class="btn btn-icon link-hover btn-danger" style='border-radius: 6px !important;' data-bs-placement="right" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="حذف"><i class="las la-trash-alt fs-6"></i></button>
+                                                            </div> 
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>نص هنا</th>
+                                                        <th>
+                                                            <div class="btn-list">
+                                                                <button type="button" class="btn btn-icon link-hover btn-success" style='border-radius: 6px !important;' data-bs-placement="right" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="تعديل"><i class="las la-edit fs-6"></i></button>
+                                                                <button type="button" class="btn btn-icon link-hover btn-danger" style='border-radius: 6px !important;' data-bs-placement="right" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="" data-bs-original-title="حذف"><i class="las la-trash-alt fs-6"></i></button>
+                                                            </div> 
+                                                        </th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                    <!-- CONTAINER END -->
+                </div>
+            </div>
+            <!--app-content close-->        
+        </div>
+            <!--app-content close-->        
+        </div>
+
+        <!-- FOOTER -->
+        <footer class='footer'>
+            <div class='container'>
+                <div class='row align-items-center flex-row-reverse'>
+                    <div class='col-md-12 col-sm-12 text-center'>
+                        <h6 class='text-primary'>جميع الحقوق محفوظة <a class='text-blue link-hover' href='#'>الإبداع التقني</a></h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER END -->
+
+    </div>
+    <!-- /page -->
+
+    <!--Models-->
+    
+    <div class='modal fade' id='profilemodal' tabindex='-1' role='dialog'>
+        <div class='modal-dialog modal-md' role='document'>
+            <form class='modal-content rounded-4'>
+                <div class='modal-header'>
+                    <h5 class='modal-title text-blue'><i class='bi bi-person-vcard-fill text-primary'></i> تعديل بيانات
+                        حسابي</h5>
+                    <button class='btn-close' data-bs-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden='true'>×</span>
+                    </button>
+                </div>
+                <div class='modal-body'>
+                    <div class='card-body text-primary'>
+                        <div class='form-group'>
+                            <label for='formFile' class='form-label mt-0'>تحديث صورة الملف الشخصي</label>
+                            <input class='form-control' type='file'>
+                        </div>
+                        <div class='row'>
+                            <div class='col-lg-6 col-md-12'>
+                                <div class='form-group'>
+                                    <label for=''>الاسم الأول</label>
+                                    <input type='text' class='form-control' placeholder='فهد'>
+                                </div>
+                            </div>
+                            <div class='col-lg-6 col-md-12'>
+                                <div class='form-group'>
+                                    <label for=''>الاسم الأخير</label>
+                                    <input type='text' class='form-control' placeholder='الحربي'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputEmail1'>البريد الإلكتروني</label>
+                            <input type='email' class='form-control' id='exampleInputEmail1'
+                                placeholder='demo@gmail.com'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputnumber'>رقم الهاتف</label>
+                            <input type='tel' class='form-control' id='exampleInputnumber' placeholder=''>
+                        </div>
+                    </div>
+                </div>
+                <div class='modal-footer'>
+                    <button class='btn btn-primary link-hover' data-bs-dismiss='modal'>إلغاء</button>
+                    <button class='btn btn-blue link-hover'>حفظ الاعدادت</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class='modal fade' id='passmodal' tabindex='-1' role='dialog'>
+        <div class='modal-dialog modal-md' role='document'>
+            <form class='modal-content rounded-4'>
+                <div class='modal-header'>
+                    <h5 class='modal-title text-blue'><i class='bi bi-person-fill-lock text-primary'></i> تغيير كلمة
+                        المرور</h5>
+                    <button class='btn-close' data-bs-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden='true'>×</span>
+                    </button>
+                </div>
+                <div class='modal-body'>
+                    <div class='card-body text-primary'>
+                        <div class='row'>
+                            <div class='col-md-12'>
+                                <div class='form-group'>
+                                    <label for=''>كلمة المرور القديمة</label>
+                                    <input type='password' class='form-control' placeholder=''>
+                                    <div class='text-end mt-1'><a class='text-danger' href='javascript:void(0)'>نسيت
+                                            كلمة المرور؟</a></div>
+                                </div>
+                            </div>
+                            <div class='col-lg-6 col-md-12'>
+                                <div class='form-group'>
+                                    <label for=''>كلمة المرور الجديدة</label>
+                                    <input type='password' class='form-control' placeholder=''>
+                                </div>
+                            </div>
+                            <div class='col-lg-6 col-md-12'>
+                                <div class='form-group'>
+                                    <label for=''>تأكيد كلمة المرور الجديدة</label>
+                                    <input type='password' class='form-control' placeholder=''>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='modal-footer'>
+                    <button class='btn btn-primary link-hover' data-bs-dismiss='modal'>إلغاء</button>
+                    <button class='btn btn-blue link-hover'>حفظ الاعدادت</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href='#top' id='back-to-top'><i class='fa fa-angle-up'></i></a>
+    <div class="whatsapp-fixed" data-bs-placement='right' data-bs-toggle='tooltip' data-bs-custom-class='custom-tooltip'
+        title='' data-bs-original-title='الدعم الفني'><a href="https://api.whatsapp.com/send?phone=00972599459397"
+            target="_blank" title="whatsapp"><i class="bi bi-whatsapp"></i></a></div>
+    <!-- JQUERY JS -->
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/charts-c3/d3.v5.min.js"></script>
+    <script src="assets/plugins/charts-c3/c3-chart.js"></script>
+    <script src="assets/plugins/input-mask/jquery.mask.min.js"></script>
+    <script src="assets/js/tooltip&popover.js"></script>
+    <script src="assets/plugins/sidemenu/sidemenu.js"></script>
+    <script src="assets/plugins/bootstrap5-typehead/autocomplete.js"></script>
+    <script src="assets/js/typehead.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/app-chart.js"></script>
+    <script src="assets/plugins/select2/select2.full.min.js"></script>
+    <script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+    <script src="assets/plugins/datatable/js/jszip.min.js"></script>
+    <script src="assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
+    <script src="assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
+    <script src="assets/plugins/datatable/js/buttons.html5.min.js"></script>
+    <script src="assets/plugins/datatable/js/buttons.print.min.js"></script>
+    <script src="assets/plugins/datatable/js/buttons.colVis.min.js"></script>
+    <script src="assets/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+    <script src="assets/js/table-data.js"></script>
+    <script src="assets/js/autofill-table.js"></script>
+    <script src="assets/plugins/sidebar/sidebar.js"></script>
+    <script src="assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+    <script src="assets/plugins/p-scroll/pscroll.js"></script>
+    <script src="assets/plugins/p-scroll/pscroll-1.js"></script>
+    <script src="assets/plugins/wysiwyag/jquery.richtext.js"></script>
+    <script src="assets/plugins/wysiwyag/wysiwyag.js"></script>
+    <script src="assets/js/themeColors.js"></script>
+    <script src="assets/js/sticky.js"></script>
+    <script src="assets/js/custom.js"></script>
+    
+
+</body>
+
+</html>

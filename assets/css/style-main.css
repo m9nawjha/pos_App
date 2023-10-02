@@ -206,6 +206,51 @@ a.text-success:hover, a.text-success:focus{
   z-index: 70;
 }
 
+#back-to-top{
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    bottom: 100px !important;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 45px !important;
+    height: 45px !important;
+}
+#back-to-top i{
+    font-size: 20px;
+    line-height: 45px !important;
+    display: unset !important;
+}
+#back-to-top:hover{
+    background: var(--bs-white);
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    border-radius: 50%;
+}
+.whatsapp-fixed{
+    position: fixed;
+    z-index: 200;
+    bottom: 20px;
+    left: 20px;
+    background-color: #00e676;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px 0 rgba(90, 89, 89, 0.19), 0 2px 20px 0 rgba(90, 89, 89, 0.19);
+    -moz-transition: all 250ms linear;
+    -webkit-transition: all 250ms linear;
+    -o-transition: all 250ms linear;
+  }
+  .whatsapp-fixed i{
+    line-height: 58px;
+    font-size: 30px;
+    color: #fff;
+  }
+  .whatsapp-fixed:hover{
+    opacity: 0.7;
+    transition: all 0.5s;
+  }
+
 /***********************************/
 /*
 haeder style css
@@ -216,10 +261,10 @@ haeder style css
     border-bottom: 2px solid var(--bs-white);
 }
 .header-right-icons .nav-link.icon {
-    color: var(--bs-white);
+    color: var(--bs-white) !important;
 }
 .header-right-icons .nav-link.icon:hover{
-    color: var(--bs-primary);
+    color: var(--bs-primary) !important;
 }
 .app-sidebar__toggle:before {
     content: "\F48A" !important;
@@ -234,6 +279,12 @@ haeder style css
     .header .dropdown-menu {
         top: 0!important;
     }
+}
+@media (max-width: 991px){
+.logo-horizontal {
+    display: flex !important;
+    position: unset;
+}
 }
 /***********************************/
 /*
